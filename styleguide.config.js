@@ -1,4 +1,19 @@
 const path = require('path');
+const reactDocgen = require('react-docgen');
+const reactDocgenTypescript = require('react-docgen-typescript');
+
+const parsePropsJSX = (filename, code, resolver, handlers) =>
+  reactDocgen.parse(code, resolver, handlers, { filename });
+
+const parsePropsTSX = reactDocgenTypescript.withCustomConfig(
+  './tsconfig.json',
+  {}
+).parse;
+
+const propsParser = (filePath, code, resolver, handlers) =>
+  /tsx$/.test(filePath)
+    ? parsePropsTSX(filePath)
+    : parsePropsJSX(filePath, code, resolver, handlers);
 
 module.exports = {
   webpackConfig: {
@@ -6,8 +21,13 @@ module.exports = {
       rules: [
         {
           test: /\.jsx?$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader'
+          use: 'babel-loader',
+          exclude: /node_modules/
+        },
+        {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/
         },
         {
           test: /\.css$/,
@@ -27,8 +47,12 @@ module.exports = {
           ]
         }
       ]
+    },
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js', '.jsx']
     }
   },
+  propsParser,
   title: ' ',
   styleguideComponents: {
     Wrapper: path.join(__dirname, './styleguidist/Wrapper')
@@ -115,7 +139,7 @@ module.exports = {
     {
       name: 'Manoolkit Components',
       description: 'Toolkit Library with new graphic chart',
-      components: 'src/components/*/*.jsx',
+      components: ['src/components/*/*.jsx', 'src/components/*/*.tsx'],
       sectionDepth: 1,
       ignore: [
         'src/components/Dropdown/OptionContainer.jsx',

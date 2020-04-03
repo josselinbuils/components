@@ -1,11 +1,4 @@
-/**
- * Copyright (c) Colibri SAS - ManoMano
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { Transition, animated, config } from 'react-spring';
 import cn from 'classnames';
 
@@ -13,7 +6,7 @@ import Hint from '../Hint';
 import Portal from '../Portal';
 import styles from './Alert.module.scss';
 
-export const translate = value => {
+const translate = (value: Position) => {
   switch (value) {
     case 'topRight':
     case 'bottomRight':
@@ -26,17 +19,18 @@ export const translate = value => {
   }
 };
 
-const timer = (toggle, timeout) => setTimeout(() => toggle(), timeout);
+const timer = (toggle: () => void, timeout: number) =>
+  setTimeout(() => toggle(), timeout);
 
-const Alert = ({
+const Alert: FC<Props> = ({
+  className = '',
+  dataQa = '',
   on,
-  className,
-  toggle,
-  theme,
+  position = 'topRight',
   textAlert,
-  timeout,
-  position,
-  dataQa,
+  theme = 'default',
+  timeout = 0,
+  toggle
 }) => {
   const classNames = cn(
     'toolkit',
@@ -45,7 +39,7 @@ const Alert = ({
       [styles.right]: position === 'topRight' || position === 'bottomRight',
       [styles.left]: position === 'topLeft' || position === 'bottomLeft',
       [styles.top]: position === 'topRight' || position === 'topLeft',
-      [styles.bottom]: position === 'bottomRight' || position === 'bottomLeft',
+      [styles.bottom]: position === 'bottomRight' || position === 'bottomLeft'
     },
     className
   );
@@ -68,15 +62,14 @@ const Alert = ({
       >
         {display =>
           display &&
-          // eslint-disable-next-line react/display-name
           (style => (
             <animated.div
               className={classNames}
               role="contentinfo"
               style={style}
               onClick={toggle}
-              timer={timeout}
-              position={position}
+              // timer={timeout}
+              // position={position}
             >
               <Hint textAlert={textAlert} theme={theme} dataQa={dataQa} />
             </animated.div>
@@ -89,31 +82,19 @@ const Alert = ({
 
 Alert.displayName = 'Alert';
 
-Alert.propTypes = {
-  /** display alert */
-  on: PropTypes.bool.isRequired,
-  /** Required function to set props.on (display) */
-  toggle: PropTypes.func.isRequired,
-  theme: PropTypes.oneOf(['default', 'light', 'danger', 'menthe']),
-  textAlert: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
-  className: PropTypes.string,
-  /** Set timer in ms to remove automatically alert */
-  timeout: PropTypes.number,
-  position: PropTypes.oneOf([
-    'topLeft',
-    'bottomLeft',
-    'topRight',
-    'bottomRight',
-  ]),
-  dataQa: PropTypes.string,
-};
-
-Alert.defaultProps = {
-  theme: 'default',
-  className: '',
-  position: 'topRight',
-  timeout: 0,
-  dataQa: '',
-};
-
 export default Alert;
+
+type Position = 'topLeft' | 'bottomLeft' | 'topRight' | 'bottomRight';
+
+type Theme = 'default' | 'light' | 'danger' | 'menthe';
+
+interface Props {
+  className?: string;
+  dataQa?: string;
+  on: boolean;
+  position?: Position;
+  textAlert: string | (() => void);
+  theme?: Theme;
+  timeout?: number;
+  toggle(): void;
+}
