@@ -15,7 +15,7 @@ import { Icon, IconAccount } from 'ToolkitPath';
 <Icon component={IconAccount} />;
 ```
 
-```js
+```jsx
 import IconAbTest from './Icons/IconAbTest';
 import IconAccount from './Icons/IconAccount';
 import IconAlertCircle from './Icons/IconAlertCircle';
@@ -212,7 +212,7 @@ const icons = [
   { icon: IconNetherlands, name: 'IconNetherlands' },
   { icon: IconSpain, name: 'IconSpain' },
   { icon: IconSwitzerland, name: 'IconSwitzerland' },
-  { icon: IconUnitedKingdom, name: 'IconUnitedKingdom' },
+  { icon: IconUnitedKingdom, name: 'IconUnitedKingdom' }
 ];
 
 const style = {
@@ -226,20 +226,20 @@ const style = {
   margin: '0 .5rem .5rem 0',
   background: '#e8e8e8',
   border: '1px solid #d4d4d4',
-  borderRadius: 3,
+  borderRadius: 3
 };
 
 const span = {
   marginTop: 5,
   fontSize: 12,
-  textAlign: 'center',
+  textAlign: 'center'
 };
 
 <div
   style={{
     display: 'flex',
     flexFlow: 'row wrap',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start'
   }}
 >
   {icons.map(({ icon, name }) => (

@@ -4,7 +4,7 @@ Warning
 
 HeightTransition :
 
-```js
+```jsx
 import Button from '../Button';
 import Toggle from '../Toggle';
 

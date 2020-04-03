@@ -1,4 +1,4 @@
-```js
+```jsx
 initialState = { value: '' };
 
 <Textarea
@@ -12,7 +12,7 @@ initialState = { value: '' };
 />;
 ```
 
-```js
+```jsx
 initialState = { value: '' };
 
 <Textarea
@@ -26,7 +26,7 @@ initialState = { value: '' };
 />;
 ```
 
-```js
+```jsx
 initialState = { value: '' };
 
 <Textarea
@@ -38,6 +38,6 @@ initialState = { value: '' };
 />;
 ```
 
-```js
+```jsx
 <Textarea name="textarea" id="id" placeholder="Disabled Placeholder" disabled />
 ```

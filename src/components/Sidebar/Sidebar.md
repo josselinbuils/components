@@ -3,7 +3,7 @@ Sidebar:
 - Sidebar use Portal component, check Portal section to add configuration.
 - Choose width Sidebar with props as a string, you can precise units like `px` or `%` for exemple.
 
-```js
+```jsx
 import Button from '../Button';
 import Overlay from '../Overlay';
 import Toggle from '../Toggle';
@@ -25,7 +25,7 @@ import Toggle from '../Toggle';
 </Toggle>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
 import Toggle from '../Toggle';
 import Overlay from '../Overlay';

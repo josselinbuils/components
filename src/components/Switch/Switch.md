@@ -1,6 +1,6 @@
 Switch example:
 
-```js
+```jsx
 initialState = { checked: false };
 
 <Switch
@@ -14,7 +14,7 @@ initialState = { checked: false };
 
 Switch with label:
 
-```js
+```jsx
 initialState = { checked: false };
 
 <Switch

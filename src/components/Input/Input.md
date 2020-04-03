@@ -8,7 +8,7 @@ Input basic :
 
 Input basic
 
-```js
+```jsx
 initialState = { value: '' };
 
 <Input
@@ -23,7 +23,7 @@ initialState = { value: '' };
 
 Input with helper :
 
-```js
+```jsx
 initialState = { value: '' };
 
 <Input
@@ -39,7 +39,7 @@ initialState = { value: '' };
 
 Input with error :
 
-```js
+```jsx
 initialState = { value: '' };
 
 <Input
@@ -55,7 +55,7 @@ initialState = { value: '' };
 
 Input with set value :
 
-```js
+```jsx
 initialState = { value: 'I have set value' };
 
 <Input
@@ -70,7 +70,7 @@ initialState = { value: 'I have set value' };
 
 Input with helper and error :
 
-```js
+```jsx
 initialState = { value: '' };
 
 <Input
@@ -87,7 +87,7 @@ initialState = { value: '' };
 
 Disabled Input :
 
-```js
+```jsx
 initialState = { value: '' };
 
 <Input
@@ -102,7 +102,7 @@ initialState = { value: '' };
 
 Required Input :
 
-```js
+```jsx
 initialState = { value: '' };
 
 <Input
@@ -118,7 +118,7 @@ initialState = { value: '' };
 
 Validated Input :
 
-```js
+```jsx
 initialState = { value: 'Value is valid !' };
 
 <Input
@@ -134,7 +134,7 @@ initialState = { value: 'Value is valid !' };
 
 Input with icon :
 
-```js
+```jsx
 import IconLock from '../Icon/Icons/IconLock';
 initialState = { value: '' };
 
@@ -151,7 +151,7 @@ initialState = { value: '' };
 
 Input with indicator :
 
-```js
+```jsx
 initialState = { value: '' };
 
 <Input
@@ -167,7 +167,7 @@ initialState = { value: '' };
 
 Input with icon left :
 
-```js
+```jsx
 import IconLock from '../Icon/Icons/IconLock';
 initialState = { value: '' };
 

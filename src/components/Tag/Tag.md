@@ -1,6 +1,6 @@
 Tag default:
 
-```js
+```jsx
 <div style={{ padding: 20 }}>
   <Tag>Tag</Tag>
   <Tag theme="primary" onClick={() => alert('hello')}>
@@ -17,7 +17,7 @@ Tag default:
 
 Tag disabled:
 
-```js
+```jsx
 <div style={{ padding: 20 }}>
   <Tag disabled>Tag</Tag>
 </div>

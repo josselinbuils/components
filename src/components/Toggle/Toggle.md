@@ -13,7 +13,7 @@ Toggle controler with RenderChild pattern :
 <br />
 ###### Info: ToggleOut func is bind to escape keyboard.
 
-```js
+```jsx
 import Button from '../Button';
 import Toggle from '../Toggle';
 
@@ -33,14 +33,13 @@ import Toggle from '../Toggle';
 
 Toggle force :
 
-```js
-import Card from '../Card';
+```jsx
 import Toggle from '../Toggle';
 
 <Toggle>
   {({ on, toggleIn, toggleOut }) => (
     <div onMouseEnter={toggleIn} onMouseLeave={toggleOut}>
-      <Card>{on ? "I'm hovered" : 'Hover me'}</Card>
+      {on ? "I'm hovered" : 'Hover me'}
     </div>
   )}
 </Toggle>;

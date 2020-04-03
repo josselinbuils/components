@@ -14,12 +14,10 @@ Tips:
 
 - If you need to display an iframe in Modal, set props "hasIframe" at true to fix width.
 
-```js
+```jsx
 import Button from '../Button';
-import Layout from '../Layout';
 import Toggle from '../Toggle';
 
-<Layout direction="column" styleGuidist>
   <h4 className="h4">Modal with Header as string and default footer</h4>
   <Toggle>
     {({ on, toggle }) => (
@@ -31,15 +29,12 @@ import Toggle from '../Toggle';
       </div>
     )}
   </Toggle>
-</Layout>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
-import Layout from '../Layout';
 import Toggle from '../Toggle';
 
-<Layout direction="column" styleGuidist>
   <h4 className="h4">Modal without Header and Footer</h4>
   <Toggle>
     {({ on, toggle }) => (
@@ -69,16 +64,12 @@ import Toggle from '../Toggle';
       </div>
     )}
   </Toggle>
-</Layout>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
-import Layout from '../Layout';
 import Toggle from '../Toggle';
-import Wrapper from '../Wrapper';
 
-<Layout direction="column" styleGuidist>
   <h4 className="h4">Modal with custom Header</h4>
   <Toggle>
     {({ on, toggle }) => (
@@ -88,7 +79,6 @@ import Wrapper from '../Wrapper';
           on={on}
           toggle={toggle}
           header={
-            <Wrapper direction="colum">
               Header custom content
               <Button
                 theme="secondary"
@@ -98,7 +88,6 @@ import Wrapper from '../Wrapper';
               >
                 close
               </Button>
-            </Wrapper>
           }
         >
           Body content
@@ -106,16 +95,12 @@ import Wrapper from '../Wrapper';
       </div>
     )}
   </Toggle>
-</Layout>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
-import Layout from '../Layout';
 import Toggle from '../Toggle';
-import Wrapper from '../Wrapper';
 
-<Layout direction="column" styleGuidist>
   <h4 className="h4">Modal with custom Footer</h4>
   <Toggle>
     {({ on, toggle }) => (
@@ -125,7 +110,6 @@ import Wrapper from '../Wrapper';
           on={on}
           toggle={toggle}
           Footer={
-            <Wrapper direction="colum">
               Footer content
               <Button
                 theme="secondary"
@@ -135,7 +119,6 @@ import Wrapper from '../Wrapper';
               >
                 close
               </Button>
-            </Wrapper>
           }
         >
           Body content
@@ -143,15 +126,12 @@ import Wrapper from '../Wrapper';
       </div>
     )}
   </Toggle>
-</Layout>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
-import Layout from '../Layout';
 import Toggle from '../Toggle';
 
-<Layout direction="column" styleGuidist>
   <h4 className="h4">Modal with big body content</h4>
   <Toggle>
     {({ on, toggle }) => (
@@ -333,16 +313,12 @@ import Toggle from '../Toggle';
       </div>
     )}
   </Toggle>
-</Layout>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
-import Iframe from '../Iframe';
-import Layout from '../Layout';
 import Toggle from '../Toggle';
 
-<Layout direction="column" styleGuidist>
   <h4 className="h4">Modal with iframe content</h4>
   <Toggle>
     {({ on, toggle }) => (
@@ -354,24 +330,17 @@ import Toggle from '../Toggle';
           header="Modal title as a string props"
           hasIframe
         >
-          <Iframe
-            id="manomano"
-            title="manomano"
-            src="https://www.manomano.fr/"
-          />
+          Hello
         </Modal>
       </div>
     )}
   </Toggle>
-</Layout>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
-import Layout from '../Layout';
 import Toggle from '../Toggle';
 
-<Layout direction="column" styleGuidist>
   <h4 className="h4">Modal with an other modal</h4>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -404,5 +373,4 @@ import Toggle from '../Toggle';
       </div>
     )}
   </Toggle>
-</Layout>;
 ```

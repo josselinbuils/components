@@ -16,7 +16,7 @@ Tips:
 
 - Force toggleOut on toggle props to avoid conflict between close click event and close timeout function
 
-```js
+```jsx
 import Button from '../Button';
 import Toggle from '../Toggle';
 
@@ -37,11 +37,11 @@ import Toggle from '../Toggle';
 </Toggle>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
 
 initialState = {
-  on: false,
+  on: false
 };
 
 <div>
@@ -59,7 +59,7 @@ initialState = {
 </div>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
 import Toggle from '../Toggle';
 
@@ -81,7 +81,7 @@ import Toggle from '../Toggle';
 </Toggle>;
 ```
 
-```js
+```jsx
 import Button from '../Button';
 import Toggle from '../Toggle';
 

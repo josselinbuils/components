@@ -11,8 +11,7 @@ Warning
 
 - In case of multiple arrays, you should concat all arrays as last exemple.
 
-```js
-import Card from '../Card';
+```jsx
 import Tab from './Tab';
 
 <Tabs>
@@ -30,22 +29,20 @@ import Tab from './Tab';
       ullamcorper pimpin', yo mamma non, i saw beyonces tizzles and my pizzle
       went crizzle. Nam shiz rutrizzle check out this.
     </p>
-    <Card>
-      <h4>Component</h4>
-      <p>
-        Dizzle crackalackin dolor. Fusce magna bow wow wow, dignissizzle sizzle
-        things, fringilla egizzle, sollicitudizzle nizzle, break yo neck, yall.
-        Maecenizzle gangster nisi. Sed malesuada neque izzle away. Suspendisse
-        erat. You son of a bizzle mammasay mammasa mamma oo sa tristique turpis.
-        Suspendisse blandit ultricizzle sheezy. Shit dolor da bomb, its fo
-        rizzle interdizzle, rizzle daahng dawg, dang et, . Suspendisse mah
-        nizzle shut the shizzle up. Gizzle aliquizzle pimpin' sizzle that's the
-        shizzle dolor. Fusce dapibizzle da bomb izzle arcu. Lorem ass sizzle
-        boofron amizzle, consectetuer gizzle hizzle. Gangsta massa purizzle,
-        eleifend laorizzle, ullamcorper pimpin', yo mamma non, i saw beyonces
-        tizzles and my pizzle went crizzle. Nam shiz rutrizzle check out this.
-      </p>
-    </Card>
+    <h4>Component</h4>
+    <p>
+      Dizzle crackalackin dolor. Fusce magna bow wow wow, dignissizzle sizzle
+      things, fringilla egizzle, sollicitudizzle nizzle, break yo neck, yall.
+      Maecenizzle gangster nisi. Sed malesuada neque izzle away. Suspendisse
+      erat. You son of a bizzle mammasay mammasa mamma oo sa tristique turpis.
+      Suspendisse blandit ultricizzle sheezy. Shit dolor da bomb, its fo rizzle
+      interdizzle, rizzle daahng dawg, dang et, . Suspendisse mah nizzle shut
+      the shizzle up. Gizzle aliquizzle pimpin' sizzle that's the shizzle dolor.
+      Fusce dapibizzle da bomb izzle arcu. Lorem ass sizzle boofron amizzle,
+      consectetuer gizzle hizzle. Gangsta massa purizzle, eleifend laorizzle,
+      ullamcorper pimpin', yo mamma non, i saw beyonces tizzles and my pizzle
+      went crizzle. Nam shiz rutrizzle check out this.
+    </p>
   </Tab>
 
   <Tab label="Label Two">
@@ -69,7 +66,7 @@ import Tab from './Tab';
 
 Tabs with one child:
 
-```js
+```jsx
 import Tab from './Tab';
 
 <Tabs>
@@ -93,7 +90,7 @@ import Tab from './Tab';
 
 Tabs with multiple arrays:
 
-```js
+```jsx
 import Tab from './Tab';
 
 test = ['Tab1', 'Tab2'];

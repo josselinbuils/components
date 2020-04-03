@@ -22,7 +22,7 @@ yarn add @manomano/toolkit
 
 Then add the className 'toolkit' the most upper element of your project. This is needed to make use of some global styles. Example:
 
-```jsx static
+```jsx
 <body className="toolkit">
 ```
 
@@ -30,7 +30,7 @@ Then add the className 'toolkit' the most upper element of your project. This is
 
 ### Usage
 
-```js static
+```jsx static
 import { component } from '@manomano/toolkit';
 ```
 

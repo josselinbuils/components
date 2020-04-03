@@ -4,7 +4,7 @@ Warning
 
 Overlay :
 
-```js
+```jsx
 import Button from '../Button';
 import Toggle from '../Toggle';
 

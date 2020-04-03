@@ -1,9 +1,9 @@
-```js
+```jsx
 const style = {
   display: 'grid',
   gridGap: '16px 8px',
   gridTemplate: 'auto / repeat(auto-fit, minmax(100px, auto))',
-  textAlign: 'center',
+  textAlign: 'center'
 };
 
 <div style={style} className="toolkit">

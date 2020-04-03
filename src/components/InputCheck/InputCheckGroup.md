@@ -1,22 +1,22 @@
 Input Radio Group Horizontal:
 
-```js
+```jsx
 initialState = {
   selected: 'mp3',
   options: [
     {
       label: 'Vinyle',
-      value: 'vinyle',
+      value: 'vinyle'
     },
     {
       label: 'CD',
-      value: 'cd',
+      value: 'cd'
     },
     {
       label: 'Mp3',
-      value: 'mp3',
-    },
-  ],
+      value: 'mp3'
+    }
+  ]
 };
 
 <InputCheckGroup
@@ -31,23 +31,23 @@ initialState = {
 
 Input Radio Group Horizontal (required):
 
-```js
+```jsx
 initialState = {
   selected: 'cd',
   options: [
     {
       label: 'Vinyle',
-      value: 'vinyle',
+      value: 'vinyle'
     },
     {
       label: 'CD',
-      value: 'cd',
+      value: 'cd'
     },
     {
       label: 'Mp3',
-      value: 'mp3',
-    },
-  ],
+      value: 'mp3'
+    }
+  ]
 };
 
 <InputCheckGroup
@@ -63,23 +63,23 @@ initialState = {
 
 Input Radio Group Horizontal (required without title):
 
-```js
+```jsx
 initialState = {
   selected: 'vinyle',
   options: [
     {
       label: 'Vinyle',
-      value: 'vinyle',
+      value: 'vinyle'
     },
     {
       label: 'CD',
-      value: 'cd',
+      value: 'cd'
     },
     {
       label: 'Mp3',
-      value: 'mp3',
-    },
-  ],
+      value: 'mp3'
+    }
+  ]
 };
 
 <InputCheckGroup
@@ -94,23 +94,23 @@ initialState = {
 
 Input Radio Group Horizontal (with error):
 
-```js
+```jsx
 initialState = {
   selected: 'vinyle',
   options: [
     {
       label: 'Vinyle',
-      value: 'vinyle',
+      value: 'vinyle'
     },
     {
       label: 'CD',
-      value: 'cd',
+      value: 'cd'
     },
     {
       label: 'Mp3',
-      value: 'mp3',
-    },
-  ],
+      value: 'mp3'
+    }
+  ]
 };
 
 <InputCheckGroup
@@ -125,23 +125,23 @@ initialState = {
 
 Input Radio Group Vertical:
 
-```js
+```jsx
 initialState = {
   selected: 'magneto',
   options: [
     {
       label: 'Cassette',
-      value: 'cassette',
+      value: 'cassette'
     },
     {
       label: 'Magneto',
-      value: 'magneto',
+      value: 'magneto'
     },
     {
       label: 'MiniDisc',
-      value: 'minidisc',
-    },
-  ],
+      value: 'minidisc'
+    }
+  ]
 };
 
 <InputCheckGroup
@@ -157,23 +157,23 @@ initialState = {
 
 Input checkbox Group Horizontal:
 
-```js
+```jsx
 initialState = {
   selected: ['osx-xxx_x', 'linux'],
   options: [
     {
       label: 'Osx',
-      value: 'osx',
+      value: 'osx'
     },
     {
       label: 'Windows',
-      value: 'windows',
+      value: 'windows'
     },
     {
       label: 'Linux',
-      value: 'linux',
-    },
-  ],
+      value: 'linux'
+    }
+  ]
 };
 
 <InputCheckGroup
@@ -189,8 +189,8 @@ initialState = {
       ? setState({ selected: [...state.selected, e.currentTarget.value] })
       : setState({
           selected: state.selected.filter(
-            option => option !== e.currentTarget.value,
-          ),
+            option => option !== e.currentTarget.value
+          )
         });
   }}
 />;

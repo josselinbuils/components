@@ -1,6 +1,6 @@
 Input Checkbox without label:
 
-```js
+```jsx
 initialState = { checked: false };
 
 <InputCheck
@@ -15,7 +15,7 @@ initialState = { checked: false };
 
 Input Checkbox:
 
-```js
+```jsx
 initialState = { checked: false };
 
 <InputCheck
@@ -31,7 +31,7 @@ initialState = { checked: false };
 
 Input Checkbox with tag label:
 
-```js
+```jsx
 import Tag from '../Tag';
 initialState = { checked: false };
 
@@ -54,7 +54,7 @@ const renderTagLabel = () => (
 
 Input radio:
 
-```js
+```jsx
 initialState = { selected: 'valueRadioOne' };
 onChange = e => setState({ selected: e.target.value });
 

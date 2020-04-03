@@ -10,7 +10,7 @@ Our main font is Open Sans, to install this font in your project, import the req
 
 ### Font uses
 
-```js
+```jsx
 <div className="toolkit">
   <div className="separator-block">
     <h2 className="h3 block-title">Headings</h2>
@@ -67,6 +67,6 @@ Our main font is Open Sans, to install this font in your project, import the req
 
 If you semantically need a <b>h2</b> but with the look of an <b>h3</b> you can do:
 
-```jsx static
+```jsx
 <h2 className="h3">
 ```

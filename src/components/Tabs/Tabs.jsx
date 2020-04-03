@@ -11,7 +11,6 @@ import cn from 'classnames';
 import HeightTransition from '../HeightTransition';
 import TabBody from './TabBody';
 import TabLabel from './TabLabel';
-import Wrapper from '../Wrapper';
 import styles from './Tabs.module.scss';
 
 export default class Tabs extends PureComponent {
@@ -55,7 +54,7 @@ export default class Tabs extends PureComponent {
     const classNames = cn('toolkit', styles.tabs, className);
 
     return (
-      <Wrapper className={classNames}>
+      <div className={classNames}>
         <ul className={styles.tabList} role="tablist">
           {React.Children.map(children, child => {
             const { label } = child.props;
@@ -74,7 +73,7 @@ export default class Tabs extends PureComponent {
             <TabBody activeTab={activeTab}>{children}</TabBody>
           </div>
         </HeightTransition>
-      </Wrapper>
+      </div>
     );
   }
 }
@@ -86,8 +85,8 @@ Tabs.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.node,
-    PropTypes.arrayOf([PropTypes.node]),
-  ]).isRequired,
+    PropTypes.arrayOf([PropTypes.node])
+  ]).isRequired
 };
 
 Tabs.defaultProps = { className: '' };

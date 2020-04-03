@@ -10,7 +10,7 @@ Tooltip:
 
 Tooltip default:
 
-```js
+```jsx
 <p>
   This is a text with tooltip,
   <b>
@@ -23,7 +23,7 @@ Tooltip default:
 
 Tooltip bottom :
 
-```js
+```jsx
 <p>
   This is a text with tooltip,
   <b>
@@ -36,7 +36,7 @@ Tooltip bottom :
 
 Tooltip left :
 
-```js
+```jsx
 <p>
   <b>
     <Tooltip
@@ -51,7 +51,7 @@ Tooltip left :
 
 Tooltip right :
 
-```js
+```jsx
 <p>
   This is a text with tooltip,
   <b>
@@ -67,7 +67,7 @@ Tooltip right :
 
 Tooltip bottom :
 
-```js
+```jsx
 <p>
   This is a text with tooltip,
   <b>
