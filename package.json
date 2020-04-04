@@ -6,19 +6,29 @@
   "private": false,
   "license": "MIT",
   "scripts": {
+    "add:staged": "exec-staged 'git add' '\\.(js|tsx?|scss)$'",
     "build": "yarn build:lib && yarn build:doc",
-    "build:doc": "rimraf .docz && docz build --base $HTTP_PREFIX && cpx \".docz/dist/**/*\" doc && rimraf .docz",
+    "build:doc": "rimraf .docz && docz build --base /components && cpx \".docz/dist/**/*\" doc && rimraf .docz",
     "build:lib": "rimraf dist && rollup -c && yarn copy:package-files",
     "copy:package-files": "cpx ./LICENSE dist && cpx ./package.json dist && cpx ./README.md dist ",
+    "csscomb:staged": "exec-staged 'csscomb -v' '\\.scss$'",
     "dev": "rimraf .docz && docz dev",
+    "lint:staged": "exec-staged 'tslint -p tsconfig.json' '^src.*\\.tsx?$'",
+    "prettier:staged": "exec-staged 'prettier --write' '\\.(js|tsx?|scss)$'",
     "start:doc": "node server.js",
     "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint:staged && yarn prettier:staged && yarn csscomb:staged && yarn add:staged"
+    }
   },
   "peerDependencies": {
     "react": "^16",
     "react-dom": "^16"
   },
   "devDependencies": {
+    "@josselinbuils/exec-staged": "^0.1.1",
     "@josselinbuils/tslint": "^5.1.0",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
@@ -28,12 +38,14 @@
     "autoprefixer": "^9.7.5",
     "classnames": "^2.2.6",
     "cpx": "^1.5.0",
+    "csscomb": "^4.3.0",
     "docz": "^2.3.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
     "express": "^4.17.1",
     "gatsby-plugin-sass": "^2.2.1",
+    "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.2.7",
     "node-sass": "^4.13.1",

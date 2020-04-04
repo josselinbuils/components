@@ -2,8 +2,8 @@
 
 @mixin alert($color) {
   color: darken($color, 30%);
-  background-color: lighten($color, 30%);
   border-color: darken($color, 10%);
+  background-color: lighten($color, 30%);
 
   svg {
     color: $color;
@@ -13,13 +13,13 @@
 .alert {
   @include component;
 
+  font-size: $fontSizeM;
   display: flex;
   flex-flow: row nowrap;
-  padding: $halfSpace $space;
   margin: 0;
+  padding: $halfSpace $space;
   border: $border;
   border-radius: $borderRadius;
-  font-size: $fontSizeM;
 }
 
 .error {
@@ -27,9 +27,9 @@
 }
 
 .icon {
+  font-size: rem(21px);
   flex-grow: 0;
   margin-right: $space;
-  font-size: rem(21px);
   padding: rem(3px) 0;
 }
 

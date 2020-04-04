@@ -3,12 +3,12 @@
   margin: 0;
 
   svg {
-    fill: none;
     font-size: inherit;
     width: 1em;
     height: 1em;
     user-select: none;
-    stroke: currentColor;
     vertical-align: -0.125em;
+    fill: none;
+    stroke: currentColor;
   }
 }
