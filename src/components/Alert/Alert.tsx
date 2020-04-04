@@ -15,8 +15,8 @@ export const Alert: FC<Props> = ({
   ...forwardedProps
 }) => (
   <div
-    {...forwardedProps}
     className={cn(styles.alert, styles[level], className)}
+    {...forwardedProps}
   >
     <div className={styles.icon}>
       <Icon icon={getIconComponent(level)} />

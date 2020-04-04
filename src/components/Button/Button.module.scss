@@ -1,0 +1,114 @@
+@import '../../styles';
+
+.button {
+  @include component;
+
+  border: $border transparent;
+  border-radius: $borderRadius;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  font-size: $fontSize;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.content {
+  padding: $quarterSpace 0;
+  display: inline-block;
+}
+
+.icon {
+  font-size: rem(21px);
+
+  &:not(:last-child) {
+    margin-right: $halfSpace;
+  }
+}
+
+// Colors
+
+.primary {
+  background-color: $balataGreen;
+  color: $white;
+
+  &:focus:not(:active),
+  &:hover:not(:active) {
+    background-color: #00eccd;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 rem(1px) darken(#00eccd, 10%);
+  }
+}
+
+.secondary {
+  background-color: $bellaNotte;
+  color: $white;
+
+  &:focus:not(:active),
+  &:hover:not(:active) {
+    background-color: #2b51ad;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 rem(1px) darken(#2b51ad, 10%);
+  }
+}
+
+.ghost {
+  border-color: $balataGreen;
+  background-color: $white;
+  color: $balataGreen;
+
+  &:focus:not(:active),
+  &:hover:not(:active) {
+    background-color: $balataGreen;
+    color: $white;
+  }
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 rem(1px) darken($balataGreen, 10%);
+  }
+}
+
+.light {
+  border-color: $greyDark;
+  background-color: $white;
+  color: $squidInk;
+
+  &:focus:not(:active),
+  &:hover:not(:active) {
+    background-color: $greyMed;
+  }
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 rem(1px) darken($greyMed, 10%);
+  }
+}
+
+// Sizes
+
+.large {
+  padding: rem(12px) rem(20px);
+  height: rem(58px);
+}
+
+.medium {
+  padding: $halfSpace $space;
+  height: rem(50px);
+}
+
+.small {
+  padding: $quarterSpace rem(12px);
+  height: rem(42px);
+}
+
+.extraSmall {
+  padding: 0 $halfSpace;
+  height: rem(34px);
+}

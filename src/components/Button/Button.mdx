@@ -1,0 +1,63 @@
+---
+name: Button
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import { Button } from './Button'
+import { Icon } from '../Icon'
+import { CheckCircleIcon } from '../icons/CheckCircleIcon'
+
+# Button
+
+## Properties
+
+<Props of={Button} />
+
+## Usage
+
+```js
+import { Button } from '@josselinbuils/components/Button';
+```
+
+<Playground>
+  <Button>Button</Button>
+</Playground>
+
+<br />
+
+## Colors
+
+<Playground>
+  <Button color="primary">Primary</Button>
+  <Button color="secondary" style={{ marginLeft: '1rem' }}>Secondary</Button>
+  <Button color="ghost" style={{ marginLeft: '1rem' }}>Ghost</Button>
+  <Button color="light" style={{ marginLeft: '1rem' }}>Light</Button>
+</Playground>
+
+<br />
+
+## Sizes
+
+<Playground>
+  <Button size="large">Large</Button>
+  <Button size="medium" style={{ marginLeft: '1rem' }}>Medium</Button>
+  <Button size="small" style={{ marginLeft: '1rem' }}>Small</Button>
+  <Button size="extraSmall" style={{ marginLeft: '1rem' }}>Extra small</Button>
+</Playground>
+
+
+<br />
+
+## With icon
+
+<Playground>
+  <Button icon={CheckCircleIcon} size="large">With icon</Button>
+  <Button icon={CheckCircleIcon} size="large" style={{ marginLeft: '1rem' }} />
+  <Button icon={CheckCircleIcon} size="medium" style={{ marginLeft: '1rem' }}>With icon</Button>
+  <Button icon={CheckCircleIcon} size="medium" style={{ marginLeft: '1rem' }} />
+  <Button icon={CheckCircleIcon} size="small" style={{ marginLeft: '1rem' }}>With icon</Button>
+  <Button icon={CheckCircleIcon} size="small" style={{ marginLeft: '1rem' }} />
+  <Button icon={CheckCircleIcon} size="extraSmall" style={{ marginLeft: '1rem' }}>With icon</Button>
+  <Button icon={CheckCircleIcon} size="extraSmall" style={{ marginLeft: '1rem' }} />
+</Playground>
