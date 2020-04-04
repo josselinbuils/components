@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "rimraf dist && rollup -c",
-    "build:doc": "rimraf .docz && docz build",
+    "build:doc": "rimraf .docz && docz build --base /components",
     "dev": "docz dev",
     "start:doc": "http-server ./.docz/dist -p 9000",
     "test": "jest"
