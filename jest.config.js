@@ -1,10 +1,10 @@
 module.exports = {
   coverageThreshold: {
     global: {
-      branches: 70,
-      functions: 80,
-      lines: 85,
-      statements: 85
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90
     }
   },
   moduleNameMapper: {
@@ -12,9 +12,8 @@ module.exports = {
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  testMatch: ['<rootDir>/src/**/{test,__tests__}/**/*.{js,jsx,ts,tsx}'],
+  testMatch: ['<rootDir>/src/**/__tests__/**/*.{ts,tsx}'],
   transform: {
-    '\\.jsx?$': 'babel-jest',
     '\\.tsx?$': 'ts-jest'
   },
   transformIgnorePatterns: ['node_modules']

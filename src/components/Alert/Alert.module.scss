@@ -11,12 +11,15 @@
 }
 
 .alert {
+  @include component;
+
   display: flex;
   flex-flow: row nowrap;
-  padding: $space;
+  padding: $halfSpace $space;
   margin: 0;
   border: $border;
   border-radius: $borderRadius;
+  font-size: $fontSizeM;
 }
 
 .error {
@@ -26,10 +29,16 @@
 .icon {
   flex-grow: 0;
   margin-right: $space;
+  font-size: rem(21px);
+  padding: rem(3px) 0;
 }
 
 .info {
   @include alert($hellblau);
+}
+
+.message {
+  padding: $halfSpace 0;
 }
 
 .success {
