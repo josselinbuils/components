@@ -3,15 +3,13 @@
   "version": "0.1.0",
   "description": "Component library based on ManoMano's toolkit",
   "author": "Josselin BUILS",
+  "private": false,
   "license": "MIT",
-  "main": "dist",
-  "files": [
-    "dist/*"
-  ],
   "scripts": {
     "build": "yarn build:lib && yarn build:doc",
     "build:doc": "rimraf .docz && docz build --base $HTTP_PREFIX && cpx \".docz/dist/**/*\" doc && rimraf .docz",
-    "build:lib": "rimraf dist && rollup -c",
+    "build:lib": "rimraf dist && rollup -c && yarn copy:package-files",
+    "copy:package-files": "cpx ./LICENSE dist && cpx ./package.json dist && cpx ./README.md dist ",
     "dev": "rimraf .docz && docz dev",
     "start:doc": "node server.js",
     "test": "jest"
