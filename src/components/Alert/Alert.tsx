@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { Transition, animated, config } from 'react-spring';
 import cn from 'classnames';
-
+import React, { FC } from 'react';
+import { animated, config, Transition } from 'react-spring';
 import Hint from '../Hint';
 import Portal from '../Portal';
+
 import styles from './Alert.module.scss';
 
 const translate = (value: Position) => {
@@ -18,9 +18,6 @@ const translate = (value: Position) => {
       return 320;
   }
 };
-
-const timer = (toggle: () => void, timeout: number) =>
-  setTimeout(() => toggle(), timeout);
 
 const Alert: FC<Props> = ({
   className = '',
@@ -47,7 +44,7 @@ const Alert: FC<Props> = ({
   const setTranslate = translate(position);
 
   if (timeout !== undefined && on) {
-    timer(toggle, timeout);
+    setTimeout(toggle, timeout);
   }
 
   return (

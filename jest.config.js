@@ -7,11 +7,15 @@ module.exports = {
       statements: 85
     }
   },
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  snapshotSerializers: ['enzyme-to-json/serializer'],
-  testMatch: ['<rootDir>/src/**/test/**/*.{js,jsx}'],
-  transformIgnorePatterns: ['node_modules', '^.+\\.module\\.(css|scss)$'],
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy'
-  }
+  },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+  testMatch: ['<rootDir>/src/**/{test,__tests__}/**/*.{js,jsx,ts,tsx}'],
+  transform: {
+    '\\.jsx?$': 'babel-jest',
+    '\\.tsx?$': 'ts-jest'
+  },
+  transformIgnorePatterns: ['node_modules']
 };
