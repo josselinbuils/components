@@ -1,27 +1,41 @@
-/**
- * Copyright (c) Colibri SAS - ManoMano
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+@import '../../styles';
 
-@import '../../styles/import.scss';
+@mixin alert($color) {
+  color: darken($color, 30%);
+  background-color: lighten($color, 30%);
+  border-color: darken($color, 10%);
+
+  svg {
+    color: $color;
+  }
+}
 
 .alert {
-  position: fixed;
-  width: em(300);
-  cursor: pointer;
-  z-index: z($layers, modal);
+  display: flex;
+  flex-flow: row nowrap;
+  padding: $space;
+  margin: 0;
+  border: $border;
+  border-radius: $borderRadius;
+}
 
-  &.right {
-    right: em($space);
-  }
-  &.left {
-    left: em($space);
-  }
-  &.top {
-    top: em($space);
-  }
-  &.bottom {
-    bottom: em($space);
-  }
+.error {
+  @include alert($cocoCorail);
+}
+
+.icon {
+  flex-grow: 0;
+  margin-right: $space;
+}
+
+.info {
+  @include alert($hellblau);
+}
+
+.success {
+  @include alert($kaktus);
+}
+
+.warning {
+  @include alert($vaALaPlaya);
 }

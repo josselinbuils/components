@@ -1,6 +1,7 @@
 const path = require('path');
 const reactDocgen = require('react-docgen');
 const reactDocgenTypescript = require('react-docgen-typescript');
+const packageFile = require('./package');
 
 const parsePropsJSX = (filename, code, resolver, handlers) =>
   reactDocgen.parse(code, resolver, handlers, { filename });
@@ -52,6 +53,13 @@ module.exports = {
       extensions: ['.ts', '.tsx', '.js', '.jsx']
     }
   },
+  getComponentPathLine(componentPath) {
+    const name = path.basename(
+      componentPath,
+      /tsx$/.test(componentPath) ? '.tsx' : '.jsx'
+    );
+    return `import ${name} from '${packageFile.name}/${name}';`;
+  },
   propsParser,
   title: ' ',
   styleguideComponents: {
@@ -93,13 +101,6 @@ module.exports = {
     }
   },
   styles: {
-    Logo: {
-      logo: {
-        background: 'url("../src/assets/manomano_blanc.png") no-repeat',
-        height: '100px',
-        backgroundSize: 'contain'
-      }
-    },
     StyleGuide: {
       '@global body': {
         fontFamily: 'Open Sans'
@@ -116,45 +117,14 @@ module.exports = {
       content: 'styleguidist/Introduction.md'
     },
     {
-      name: 'Manoolkit Colors',
+      name: 'Colors',
       content: 'styleguidist/Colors.md'
     },
     {
-      name: 'Manoolkit Font',
-      content: 'styleguidist/Font.md'
-    },
-    {
-      name: 'Manoolkit Utilities',
-      description: 'Some components to help',
-      components: [
-        'src/components/GetMeasure/*.jsx',
-        'src/components/HeightTransition/*.jsx',
-        'src/components/Portal/*.jsx',
-        'src/components/StepController/*.jsx',
-        'src/components/Toggle/*.jsx',
-        'src/components/ToggleDown/*.jsx'
-      ],
-      sectionDepth: 1
-    },
-    {
-      name: 'Manoolkit Components',
+      name: 'Components',
       description: 'Toolkit Library with new graphic chart',
-      components: ['src/components/*/*.jsx', 'src/components/*/*.tsx'],
-      sectionDepth: 1,
-      ignore: [
-        'src/components/Dropdown/OptionContainer.jsx',
-        'src/components/GetMeasure/*.jsx',
-        'src/components/HeightTransition/*.jsx',
-        'src/components/InputAutoComplete/!(InputAutoComplete.jsx)',
-        'src/components/Input/InputLight.jsx',
-        'src/components/Portal/*.jsx',
-        'src/components/StepController/*.jsx',
-        'src/components/Tabs/TabBody.jsx',
-        'src/components/Tabs/TabLabel.jsx',
-        'src/components/Toggle/*.jsx',
-        'src/components/ToggleDown/*.jsx',
-        'src/components/Icon/Icons/*.jsx'
-      ]
+      components: ['src/components/*/*.tsx'],
+      sectionDepth: 1
     }
   ]
 };

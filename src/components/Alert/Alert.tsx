@@ -1,97 +1,65 @@
+import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons/faInfoCircle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cn from 'classnames';
 import React, { FC } from 'react';
-import { animated, config, Transition } from 'react-spring';
-import Hint from '../Hint';
-import Portal from '../Portal';
 
 import styles from './Alert.module.scss';
 
-const translate = (value: Position) => {
-  switch (value) {
-    case 'topRight':
-    case 'bottomRight':
-      return 320;
-    case 'topLeft':
-    case 'bottomLeft':
-      return -320;
-    default:
-      return 320;
-  }
-};
-
 const Alert: FC<Props> = ({
-  className = '',
-  dataQa = '',
-  on,
-  position = 'topRight',
-  textAlert,
-  theme = 'default',
-  timeout = 0,
-  toggle
-}) => {
-  const classNames = cn(
-    'toolkit',
-    styles.alert,
-    {
-      [styles.right]: position === 'topRight' || position === 'bottomRight',
-      [styles.left]: position === 'topLeft' || position === 'bottomLeft',
-      [styles.top]: position === 'topRight' || position === 'topLeft',
-      [styles.bottom]: position === 'bottomRight' || position === 'bottomLeft'
-    },
-    className
-  );
-
-  const setTranslate = translate(position);
-
-  if (timeout !== undefined && on) {
-    setTimeout(toggle, timeout);
-  }
-
-  return (
-    <Portal>
-      <Transition
-        native
-        items={on}
-        config={config.stiff}
-        from={{ transform: `translateX(${setTranslate}px)` }}
-        enter={{ transform: 'translateX(0)' }}
-        leave={{ transform: `translateX(${setTranslate}px)` }}
-      >
-        {display =>
-          display &&
-          (style => (
-            <animated.div
-              className={classNames}
-              role="contentinfo"
-              style={style}
-              onClick={toggle}
-              // timer={timeout}
-              // position={position}
-            >
-              <Hint textAlert={textAlert} theme={theme} dataQa={dataQa} />
-            </animated.div>
-          ))
-        }
-      </Transition>
-    </Portal>
-  );
-};
+  children,
+  className,
+  level,
+  ...forwardedProps
+}) => (
+  <div
+    {...forwardedProps}
+    className={cn(styles.alert, styles[level], className)}
+  >
+    <div className={styles.icon}>
+      <FontAwesomeIcon icon={getIconComponent(level)} />
+    </div>
+    <div className={styles.message}>{children}</div>
+  </div>
+);
 
 Alert.displayName = 'Alert';
 
-export default Alert;
-
-type Position = 'topLeft' | 'bottomLeft' | 'topRight' | 'bottomRight';
-
-type Theme = 'default' | 'light' | 'danger' | 'menthe';
-
 interface Props {
   className?: string;
-  dataQa?: string;
-  on: boolean;
-  position?: Position;
-  textAlert: string | (() => void);
-  theme?: Theme;
-  timeout?: number;
-  toggle(): void;
+  /** error, info, success, warning */
+  level: AlertLevel;
+}
+
+Alert.defaultProps = {};
+
+export default Alert;
+
+export enum AlertLevel {
+  Error = 'error',
+  Info = 'info',
+  Success = 'success',
+  Warning = 'warning'
+}
+
+function getIconComponent(level: AlertLevel): IconDefinition {
+  switch (level) {
+    case AlertLevel.Error:
+      return faExclamationCircle;
+
+    case AlertLevel.Info:
+      return faInfoCircle;
+
+    case AlertLevel.Success:
+      return faCheckCircle;
+
+    case AlertLevel.Warning:
+      return faExclamationTriangle;
+
+    default:
+      throw new Error('Unknown alert level');
+  }
 }
