@@ -10,9 +10,9 @@
   ],
   "scripts": {
     "build": "rimraf dist && rollup -c",
-    "build:doc": "rimraf .docz && docz build --base /components",
+    "build:doc": "rimraf .docz && docz build --base $HTTP_PREFIX",
     "dev": "docz dev",
-    "start:doc": "http-server ./.docz/dist -p 9000",
+    "start:doc": "node server.js",
     "test": "jest"
   },
   "peerDependencies": {
@@ -33,7 +33,6 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
     "gatsby-plugin-sass": "^2.2.1",
-    "http-server": "^0.12.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.2.7",
     "node-sass": "^4.13.1",
@@ -44,9 +43,11 @@
     "rollup-plugin-multi-input": "^1.1.1",
     "rollup-plugin-postcss": "^2.5.0",
     "rollup-plugin-typescript2": "^0.27.0",
+    "server-static": "^2.0.5",
     "ts-jest": "^25.3.1",
     "tslint": "^6.1.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "express": "latest"
   },
   "browserslist": [
     "defaults"
