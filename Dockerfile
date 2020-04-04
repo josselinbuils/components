@@ -5,6 +5,6 @@ COPY . components
 WORKDIR components
 
 RUN yarn install --frozen-lockfile && \
-    yarn doc
+    yarn build:doc
 
-CMD ["yarn", "start-doc"]
+CMD ["yarn", "start:doc"]
