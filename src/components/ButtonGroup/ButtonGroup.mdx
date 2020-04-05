@@ -1,0 +1,66 @@
+---
+name: ButtonGroup
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import { Button } from '../Button'
+import { ButtonGroup } from './ButtonGroup'
+
+# ButtonGroup
+
+## Properties
+
+<Props of={ButtonGroup} />
+
+## Usage
+
+```js
+import { Button } from '@josselinbuils/components/Button';
+import { ButtonGroup } from '@josselinbuils/components/ButtonGroup';
+```
+
+<Playground>
+  <ButtonGroup>
+    <Button>1</Button>
+    <Button>2</Button>
+    <Button>3</Button>
+  </ButtonGroup>
+</Playground>
+
+<br />
+
+## Colors and Sizes
+
+To avoid having to set the color and the size properties on every Button, you
+can provide them directly to the ButtonGroup.
+
+<Playground>
+  <ButtonGroup color="primary">
+    <Button>1</Button>
+    <Button>2</Button>
+    <Button>3</Button>
+  </ButtonGroup>
+  <ButtonGroup size="small" style={{ marginLeft: '1rem' }}>
+    <Button>1</Button>
+    <Button>2</Button>
+    <Button>3</Button>
+  </ButtonGroup>
+</Playground>
+
+<br />
+
+## Orientations
+
+<Playground>
+  <ButtonGroup orientation="horizontal">
+    <Button>1</Button>
+    <Button>2</Button>
+    <Button>3</Button>
+  </ButtonGroup>
+  <ButtonGroup orientation="vertical" style={{ marginLeft: '1rem' }}>
+    <Button>4</Button>
+    <Button>5</Button>
+    <Button>6</Button>
+  </ButtonGroup>
+</Playground>

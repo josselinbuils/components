@@ -1,6 +1,7 @@
 @import 'functions';
 
-$border: rem(1px) solid;
+$borderWidth: rem(1px);
+$border: $borderWidth solid;
 $borderRadius: rem(3px);
 $fontFamily: 'Open Sans', arial, sans-serif;
 $fontWeight: 400;
