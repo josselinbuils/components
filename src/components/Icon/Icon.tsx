@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React, { FC } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 
 import styles from './Icon.module.scss';
 
@@ -17,7 +17,7 @@ export const Icon: FC<Props> = ({
   </figure>
 );
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLElement> {
   className?: string;
   icon: IconSVGComponent;
 }

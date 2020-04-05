@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React, { FC } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import { Icon, IconSVGComponent } from '../Icon';
 import { AlertCircleIcon } from '../icons/AlertCircleIcon';
 import { AlertTriangleIcon } from '../icons/AlertTriangleIcon';
@@ -29,7 +29,7 @@ export const Alert: FC<Props> = ({
 
 Alert.displayName = 'Alert';
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   level: 'error' | 'info' | 'success' | 'warning';
 }
