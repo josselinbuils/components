@@ -1,5 +1,5 @@
 {
-  "extends": "@josselinbuils/tslint",
+  "extends": ["@josselinbuils/tslint", "tslint-react-a11y"],
   "rules": {
     "no-default-export": false
   }

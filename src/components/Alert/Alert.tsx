@@ -21,7 +21,9 @@ export const Alert: FC<Props> = ({
     <div className={styles.icon}>
       <Icon icon={getIconComponent(level)} />
     </div>
-    <div className={styles.message}>{children}</div>
+    <div role="alert" className={styles.message}>
+      {children}
+    </div>
   </div>
 );
 
