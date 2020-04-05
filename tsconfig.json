@@ -17,8 +17,7 @@
     "target": "esnext"
   },
   "exclude": [
-    "node_modules",
-    "src/doc"
+    "node_modules"
   ],
   "include": [
     "src"

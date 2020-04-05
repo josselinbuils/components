@@ -16,7 +16,7 @@ export default {
     multiInput({ relative: 'src/components' }),
     nodeResolve({ extensions: ['.ts', '.tsx'] }),
     commonjs(),
-    typescript(),
+    typescript({ tsconfig: './tsconfig.rollup.json' }),
     postcss({
       autoModules: true,
       plugins: [autoprefixer()],
