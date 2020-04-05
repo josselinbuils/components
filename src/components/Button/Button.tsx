@@ -26,6 +26,7 @@ Button.displayName = 'Button';
 interface Props extends HTMLAttributes<HTMLButtonElement> {
   /** @default light */
   color?: 'primary' | 'secondary' | 'ghost' | 'light';
+  /** See Icon component */
   icon?: IconSVGComponent;
   /** @default medium */
   size?: 'large' | 'medium' | 'small' | 'extraSmall';

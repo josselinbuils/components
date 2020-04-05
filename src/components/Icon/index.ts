@@ -1,1 +1,2 @@
-export { Icon, IconSVGComponent } from './Icon';
+export { Icon } from './Icon';
+export { IconSVGComponent } from './IconSVGComponent';

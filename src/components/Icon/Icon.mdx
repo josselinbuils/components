@@ -1,0 +1,40 @@
+---
+name: Icon
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import { FlexContainer, IconCard } from '../../doc/components'
+import { AlertCircleIcon } from '../icons/AlertCircleIcon'
+import { AlertTriangleIcon } from '../icons/AlertTriangleIcon'
+import { CheckCircleIcon } from '../icons/CheckCircleIcon'
+import { InfoIcon } from '../icons/InfoIcon'
+import { Icon } from './Icon'
+
+# Icon
+
+## Properties
+
+<Props of={Icon} />
+
+## Usage
+
+```js
+import { Icon } from '@josselinbuils/components/Icon';
+import { InfoIcon } from '@josselinbuils/components/icons/InfoIcon';
+```
+
+<Playground>
+  <Icon icon={InfoIcon} />
+</Playground>
+
+<br />
+
+## Icons
+
+<FlexContainer offsetLeft={-25} offsetTop={-9}>
+  <IconCard icon={AlertCircleIcon} title="AlertCircleIcon" />
+  <IconCard icon={AlertTriangleIcon} title="AlertTriangleIcon" />
+  <IconCard icon={CheckCircleIcon} title="CheckCircleIcon" />
+  <IconCard icon={InfoIcon} title="InfoIcon" />
+</FlexContainer>

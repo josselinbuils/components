@@ -3,9 +3,11 @@ name: Colors
 route: /colors
 ---
 
-import { ColorCard } from './components'
+import { ColorCard, FlexContainer } from './components'
 
-<div style={{ display: 'flex', flexWrap: 'wrap' }}>
+# Colors
+
+<FlexContainer offsetLeft={-45} offsetTop={-15}>
   <ColorCard color="#0c193a" title={'🐙🖋 Squid Ink'} />
   <ColorCard color="#0397a7" title={'🌊😌 Blue Mood'} />
   <ColorCard color="#29b9ad" title={'⛳ ️Balata Green'} />
@@ -19,12 +21,12 @@ import { ColorCard } from './components'
   <ColorCard color="#6455c8" title={'☔️ Purple Rain'} />
   <ColorCard color="#5aefbe" title={'🍹 Menthe à l\'eau'} />
   <ColorCard color="#5ac869" title={'🌵 Kaktus'} />
-</div>
-<div style={{ display: 'flex', flexWrap: 'wrap' }}>
+</FlexContainer>
+<FlexContainer offsetLeft={-45}>
   <ColorCard color="#424242" title="Mano Black" />
   <ColorCard color="#7c7c7c" title="Grey Med Darker" />
   <ColorCard color="#b4b4b4" title="Grey Darker" />
   <ColorCard color="#d4d4d4" title="Grey Dark" />
   <ColorCard color="#e8e8e8" title="GreyMed" />
   <ColorCard color="#fafafa" title="Grey Light" />
-</div>
+</FlexContainer>
