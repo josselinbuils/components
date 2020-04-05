@@ -15,6 +15,12 @@
   align-items: center;
   justify-content: center;
   margin: 0;
+
+  &:disabled {
+    color: $greyDarker;
+    background-color: $greyMed;
+    border-color: transparent;
+  }
 }
 
 .content {
@@ -36,16 +42,16 @@
   background-color: $balataGreen;
   color: $white;
 
-  &:focus:not(:active),
-  &:hover:not(:active) {
+  &:focus:not(:active):not(:disabled),
+  &:hover:not(:active):not(:disabled) {
     background-color: #00eccd;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     box-shadow: 0 0 0 rem(1px) darken(#00eccd, 10%);
   }
 
-  &:focus:not(:active) {
+  &:focus:not(:active):not(:disabled) {
     border-color: darken(#00eccd, 10%);
   }
 }
@@ -54,16 +60,16 @@
   background-color: $bellaNotte;
   color: $white;
 
-  &:focus:not(:active),
-  &:hover:not(:active) {
+  &:focus:not(:active):not(:disabled),
+  &:hover:not(:active):not(:disabled) {
     background-color: #2b51ad;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     box-shadow: 0 0 0 rem(1px) darken(#2b51ad, 10%);
   }
 
-  &:focus:not(:active) {
+  &:focus:not(:active):not(:disabled) {
     border-color: darken(#2b51ad, 10%);
   }
 }
@@ -73,18 +79,18 @@
   background-color: $white;
   color: $balataGreen;
 
-  &:focus:not(:active),
-  &:hover:not(:active) {
+  &:focus:not(:active):not(:disabled),
+  &:hover:not(:active):not(:disabled) {
     background-color: $balataGreen;
     color: $white;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     border-color: transparent;
     box-shadow: 0 0 0 rem(1px) $balataGreen;
   }
 
-  &:focus:not(:active) {
+  &:focus:not(:active):not(:disabled) {
     border-color: darken($balataGreen, 10%);
   }
 }
@@ -94,17 +100,17 @@
   background-color: $white;
   color: $squidInk;
 
-  &:focus:not(:active),
-  &:hover:not(:active) {
+  &:focus:not(:active):not(:disabled),
+  &:hover:not(:active):not(:disabled) {
     background-color: $greyMed;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     border-color: transparent;
     box-shadow: 0 0 0 rem(1px) $greyDark;
   }
 
-  &:focus:not(:active) {
+  &:focus:not(:active):not(:disabled) {
     border-color: darken($greyDark, 10%);
   }
 }
