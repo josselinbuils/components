@@ -29,10 +29,18 @@ import { Button } from '@josselinbuils/components/Button';
 ## Colors
 
 <Playground>
-  <Button color="primary">Primary</Button>
-  <Button color="secondary" style={{ marginLeft: '1rem' }}>Secondary</Button>
-  <Button color="ghost" style={{ marginLeft: '1rem' }}>Ghost</Button>
-  <Button color="light" style={{ marginLeft: '1rem' }}>Light</Button>
+  <div>
+    <Button color="primary">Primary</Button>
+    <Button color="secondary" style={{ marginLeft: '1rem' }}>Secondary</Button>
+    <Button color="ghost" style={{ marginLeft: '1rem' }}>Ghost</Button>
+    <Button color="light" style={{ marginLeft: '1rem' }}>Light</Button>
+  </div>
+  <div style={{ marginTop: '1rem' }}>
+    <Button color="primary" disabled>Primary</Button>
+    <Button color="secondary" disabled style={{ marginLeft: '1rem' }}>Secondary</Button>
+    <Button color="ghost" disabled style={{ marginLeft: '1rem' }}>Ghost</Button>
+    <Button color="light" disabled style={{ marginLeft: '1rem' }}>Light</Button>
+  </div>
 </Playground>
 
 <br />
