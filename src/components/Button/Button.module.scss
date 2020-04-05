@@ -38,80 +38,88 @@
 
 // Colors
 
-.primary {
+.primary:not(:disabled) {
   background-color: $balataGreen;
   color: $white;
 
-  &:focus:not(:active):not(:disabled),
-  &:hover:not(:active):not(:disabled) {
-    background-color: #00eccd;
-  }
-
-  &:active:not(:disabled) {
+  &:active {
     box-shadow: 0 0 0 rem(1px) darken(#00eccd, 10%);
   }
 
-  &:focus:not(:active):not(:disabled) {
-    border-color: darken(#00eccd, 10%);
+  &:not(:active) {
+    &:focus,
+    &:hover {
+      background-color: #00eccd;
+    }
+
+    &:focus {
+      border-color: darken(#00eccd, 10%);
+    }
   }
 }
 
-.secondary {
+.secondary:not(:disabled) {
   background-color: $bellaNotte;
   color: $white;
 
-  &:focus:not(:active):not(:disabled),
-  &:hover:not(:active):not(:disabled) {
-    background-color: #2b51ad;
-  }
-
-  &:active:not(:disabled) {
+  &:active {
     box-shadow: 0 0 0 rem(1px) darken(#2b51ad, 10%);
   }
 
-  &:focus:not(:active):not(:disabled) {
-    border-color: darken(#2b51ad, 10%);
+  &:not(:active) {
+    &:focus,
+    &:hover {
+      background-color: #2b51ad;
+    }
+
+    &:focus {
+      border-color: darken(#2b51ad, 10%);
+    }
   }
 }
 
-.ghost {
+.ghost:not(:disabled) {
   border-color: $balataGreen;
   background-color: $white;
   color: $balataGreen;
 
-  &:focus:not(:active):not(:disabled),
-  &:hover:not(:active):not(:disabled) {
-    background-color: $balataGreen;
-    color: $white;
-  }
-
-  &:active:not(:disabled) {
+  &:active {
     border-color: transparent;
     box-shadow: 0 0 0 rem(1px) $balataGreen;
   }
 
-  &:focus:not(:active):not(:disabled) {
-    border-color: darken($balataGreen, 10%);
+  &:not(:active) {
+    &:focus,
+    &:hover {
+      background-color: $balataGreen;
+      color: $white;
+    }
+
+    &:focus {
+      border-color: darken($balataGreen, 10%);
+    }
   }
 }
 
-.light {
+.light:not(:disabled) {
   border-color: $greyDark;
   background-color: $white;
   color: $squidInk;
 
-  &:focus:not(:active):not(:disabled),
-  &:hover:not(:active):not(:disabled) {
-    background-color: $greyMed;
-  }
-
-  &:active:not(:disabled) {
+  &:active {
     border-color: transparent;
     box-shadow: 0 0 0 rem(1px) $greyDark;
   }
 
-  &:focus:not(:active):not(:disabled) {
-    border-color: darken($greyDark, 10%);
+  &:not(:active) {
+    &:focus,
+    &:hover {
+      background-color: $greyMed;
+    }
+
+    &:focus {
+      border-color: darken($greyDark, 10%);
+    }
   }
 }
 
