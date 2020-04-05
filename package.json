@@ -14,7 +14,7 @@
     "csscomb:staged": "exec-staged 'csscomb -v' '\\.scss$'",
     "dev": "rimraf .docz && docz dev",
     "lint": "tslint -p tsconfig.json",
-    "lint:staged": "exec-staged 'yarn lint' '^src.*\\.tsx?$'",
+    "lint:staged": "exec-staged 'yarn lint' '^src/components.*\\.tsx?$'",
     "prettier:staged": "exec-staged 'prettier --write' '\\.(js|tsx?|scss)$'",
     "start:doc": "node server.js",
     "test": "jest"

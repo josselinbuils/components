@@ -24,7 +24,6 @@ export const Button: FC<Props> = ({
 Button.displayName = 'Button';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
-  className?: string;
   /** @default light */
   color?: 'primary' | 'secondary' | 'ghost' | 'light';
   icon?: IconSVGComponent;

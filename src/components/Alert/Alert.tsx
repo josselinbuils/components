@@ -30,7 +30,6 @@ export const Alert: FC<Props> = ({
 Alert.displayName = 'Alert';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  className?: string;
   level: 'error' | 'info' | 'success' | 'warning';
 }
 

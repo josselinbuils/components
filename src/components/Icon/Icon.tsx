@@ -18,7 +18,6 @@ export const Icon: FC<Props> = ({
 );
 
 interface Props extends HTMLAttributes<HTMLElement> {
-  className?: string;
   icon: IconSVGComponent;
 }
 
