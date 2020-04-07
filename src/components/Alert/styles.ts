@@ -13,9 +13,9 @@ import {
 const colors = { error, info, success, warning } as { [color: string]: string };
 
 const alert = (color: string) => `
-  color: ${darken(0.3, color)};
+  color: ${darken(0.2, color)};
   border-color: ${darken(0.1, color)};
-  background-color: ${lighten(0.3, color)};
+  background-color: ${lighten(0.4, color)};
 
   svg {
     color: ${color};
@@ -23,8 +23,7 @@ const alert = (color: string) => `
 `;
 
 export const AlertContainer = styled.div<{ level: string }>`
-  ${component}
-  ${({ level }) => alert(colors[level] || colors.error)}
+  ${component};
 
   font-size: ${fontSizeM};
   display: flex;
@@ -33,6 +32,8 @@ export const AlertContainer = styled.div<{ level: string }>`
   padding: ${halfSpace} ${space};
   border: ${border};
   border-radius: ${borderRadius};
+
+  ${({ level }) => alert(colors[level] || colors.error)}
 `;
 
 export const IconContainer = styled.div`
