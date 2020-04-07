@@ -14,8 +14,12 @@ export default {
   external: ['react', 'react-dom'],
   plugins: [
     multiInput({ relative: 'src/components' }),
-    nodeResolve({ extensions: ['.ts', '.tsx'] }),
-    commonjs(),
+    nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
+    commonjs({
+      namedExports: {
+        'react-is': ['isElement', 'isValidElementType', 'typeOf'],
+      },
+    }),
     typescript({ tsconfig: './tsconfig.rollup.json' }),
     postcss({
       autoModules: true,

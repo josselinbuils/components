@@ -10,7 +10,7 @@ import {
   space,
 } from '../../styles/variables';
 
-const colors = { error, info, success, warning };
+const colors = { error, info, success, warning } as { [color: string]: string };
 
 const alert = (color: string) => `
   color: ${darken(0.3, color)};
