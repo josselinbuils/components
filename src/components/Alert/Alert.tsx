@@ -1,50 +1,29 @@
-import cn from 'classnames';
 import React, { FC, HTMLAttributes } from 'react';
-import { Icon, IconSVGComponent } from '../Icon';
+import { Icon } from '../Icon';
 import { AlertCircleIcon } from '../icons/AlertCircleIcon';
 import { AlertTriangleIcon } from '../icons/AlertTriangleIcon';
 import { CheckCircleIcon } from '../icons/CheckCircleIcon';
 import { InfoIcon } from '../icons/InfoIcon';
+import { AlertContainer, IconContainer, Message } from './styles';
 
-import styles from './Alert.module.scss';
+const icons = {
+  error: AlertCircleIcon,
+  info: InfoIcon,
+  success: CheckCircleIcon,
+  warning: AlertTriangleIcon,
+};
 
-export const Alert: FC<Props> = ({
-  children,
-  className,
-  level,
-  ...forwardedProps
-}) => (
-  <div
-    className={cn(styles.alert, styles[level], className)}
-    {...forwardedProps}
-  >
-    <div className={styles.icon}>
-      <Icon icon={getIconComponent(level)} />
-    </div>
-    <div role="alert" className={styles.message}>
-      {children}
-    </div>
-  </div>
+export const Alert: FC<Props> = ({ children, level, ...forwardedProps }) => (
+  <AlertContainer level={level} {...forwardedProps}>
+    <IconContainer>
+      <Icon icon={icons[level] || icons.error} />
+    </IconContainer>
+    <Message role="alert">{children}</Message>
+  </AlertContainer>
 );
 
 Alert.displayName = 'Alert';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   level: 'error' | 'info' | 'success' | 'warning';
-}
-
-function getIconComponent(level: string): IconSVGComponent {
-  switch (level) {
-    case 'info':
-      return InfoIcon;
-
-    case 'success':
-      return CheckCircleIcon;
-
-    case 'warning':
-      return AlertTriangleIcon;
-
-    default:
-      return AlertCircleIcon;
-  }
 }
