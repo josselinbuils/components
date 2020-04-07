@@ -14,7 +14,7 @@ const colors = { error, info, success, warning } as { [color: string]: string };
 
 const alert = (color: string) => `
   color: ${darken(0.2, color)};
-  border-color: ${darken(0.1, color)};
+  border-color: ${color};
   background-color: ${lighten(0.4, color)};
 
   svg {
