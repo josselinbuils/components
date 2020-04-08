@@ -3,7 +3,7 @@ export const primary = '#12b900';
 export const secondary = '#007ad8';
 export const success = '#3cb34c';
 export const info = '#15b1ce';
-export const warning = '#ffa51d';
+export const warning = '#ff8a00';
 export const error = '#df3f2e';
 
 // Greys

@@ -1,4 +1,3 @@
-import cn from 'classnames';
 import React, {
   Children,
   cloneElement,
@@ -6,8 +5,7 @@ import React, {
   HTMLAttributes,
   ReactElement,
 } from 'react';
-
-import styles from './ButtonGroup.module.scss';
+import { ButtonContainer } from './styles';
 
 export const ButtonGroup: FC<Props> = ({
   children,
@@ -17,19 +15,11 @@ export const ButtonGroup: FC<Props> = ({
   size = 'medium',
   ...forwardedProps
 }) => (
-  <div
-    className={cn(styles.buttonGroup, styles[orientation], className)}
-    role="group"
-    {...forwardedProps}
-  >
+  <ButtonContainer orientation={orientation} role="group" {...forwardedProps}>
     {Children.map(children, (button) =>
-      cloneElement(button as ReactElement, {
-        className: styles.button,
-        color,
-        size,
-      })
+      cloneElement(button as ReactElement, { color, size })
     )}
-  </div>
+  </ButtonContainer>
 );
 
 ButtonGroup.displayName = 'ButtonGroup';

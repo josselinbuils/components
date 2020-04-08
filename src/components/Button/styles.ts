@@ -36,10 +36,6 @@ const colors = {
         background-color: ${primary};
         color: ${white};
       }
-
-      &:focus {
-        border-color: ${darken(0.1, primary)};
-      }
     }
   `,
   light: css`
@@ -57,10 +53,6 @@ const colors = {
       &:hover {
         background-color: ${greyMed};
       }
-
-      &:focus {
-        border-color: ${darken(0.1, greyDark)};
-      }
     }
   `,
   primary: css`
@@ -76,10 +68,6 @@ const colors = {
       &:hover {
         background-color: ${lighten(0.1, primary)};
       }
-
-      &:focus {
-        border-color: ${primary};
-      }
     }
   `,
   secondary: css`
@@ -94,10 +82,6 @@ const colors = {
       &:focus,
       &:hover {
         background-color: ${lighten(0.1, secondary)};
-      }
-
-      &:focus {
-        border-color: ${secondary};
       }
     }
   `,
