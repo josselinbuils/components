@@ -1,8 +1,6 @@
-import autoprefixer from 'autoprefixer';
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import multiInput from 'rollup-plugin-multi-input';
-import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
 
 export default {
@@ -21,11 +19,5 @@ export default {
       },
     }),
     typescript({ tsconfig: './tsconfig.rollup.json' }),
-    postcss({
-      autoModules: true,
-      plugins: [autoprefixer()],
-      use: ['sass'],
-      extensions: ['.scss', '.css'],
-    }),
   ],
 };

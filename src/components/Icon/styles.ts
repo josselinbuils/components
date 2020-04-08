@@ -1,4 +1,6 @@
-.icon {
+import styled from 'styled-components';
+
+export const IconContainer = styled.figure`
   display: inline-block;
   margin: 0;
 
@@ -14,4 +16,4 @@
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-}
+`;

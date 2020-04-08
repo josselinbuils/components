@@ -1,21 +1,11 @@
-import cn from 'classnames';
 import React, { FC, HTMLAttributes } from 'react';
 import { IconSVGComponent } from './IconSVGComponent';
+import { IconContainer } from './styles';
 
-import styles from './Icon.module.scss';
-
-export const Icon: FC<Props> = ({
-  className,
-  icon: IconSVG,
-  ...forwardedProps
-}) => (
-  <figure
-    aria-hidden
-    className={cn(styles.icon, className)}
-    {...forwardedProps}
-  >
+export const Icon: FC<Props> = ({ icon: IconSVG, ...forwardedProps }) => (
+  <IconContainer aria-hidden {...forwardedProps}>
     <IconSVG />
-  </figure>
+  </IconContainer>
 );
 
 export interface Props extends HTMLAttributes<HTMLElement> {

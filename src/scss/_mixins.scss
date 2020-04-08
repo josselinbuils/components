@@ -1,8 +1,0 @@
-@import './variables';
-
-@mixin component {
-  font-family: $fontFamily;
-  font-size: $fontSize;
-  font-weight: $fontWeight;
-  line-height: 1.5;
-}
