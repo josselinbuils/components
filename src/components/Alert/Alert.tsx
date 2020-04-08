@@ -24,6 +24,6 @@ export const Alert: FC<Props> = ({ children, level, ...forwardedProps }) => (
 
 Alert.displayName = 'Alert';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
   level: 'error' | 'info' | 'success' | 'warning';
 }

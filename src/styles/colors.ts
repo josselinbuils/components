@@ -1,17 +1,10 @@
-// Color Palette
-const trueBlue = '#007ad8';
-const pictonBlue = '#2cccea';
-const wageningenGreen = '#3cb34c';
-const crayola = '#ffa51d';
-const cgRed = '#df3f2e';
-
 // Theme colors
-export const primary = trueBlue;
-export const secondary = pictonBlue;
-export const success = wageningenGreen;
-export const info = pictonBlue;
-export const warning = crayola;
-export const error = cgRed;
+export const primary = '#12b900';
+export const secondary = '#007ad8';
+export const success = '#3cb34c';
+export const info = '#15b1ce';
+export const warning = '#ffa51d';
+export const error = '#df3f2e';
 
 // Greys
 export const manoBlack = '#424242';

@@ -34,7 +34,7 @@ export const ButtonGroup: FC<Props> = ({
 
 ButtonGroup.displayName = 'ButtonGroup';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
   /** @default light */
   color?: 'primary' | 'secondary' | 'ghost' | 'light';
   /** @default horizontal */
