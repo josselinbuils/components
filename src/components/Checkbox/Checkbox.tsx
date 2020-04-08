@@ -1,9 +1,6 @@
-import cn from 'classnames';
 import React, { FC, InputHTMLAttributes } from 'react';
-import { Icon } from '../Icon';
 import { CheckIcon } from '../icons/CheckIcon';
-
-import styles from './Checkbox.module.scss';
+import { CheckboxContainer, Input, StyledIcon } from './styles';
 
 export const Checkbox: FC<InputHTMLAttributes<HTMLInputElement>> = ({
   checked,
@@ -11,7 +8,7 @@ export const Checkbox: FC<InputHTMLAttributes<HTMLInputElement>> = ({
   style,
   ...forwardedProps
 }) => (
-  <div className={cn(styles.checkbox, className)} style={style}>
+  <CheckboxContainer className={className} style={style}>
     {/* tslint:disable-next-line:react-a11y-input-elements */}
     <input
       aria-checked={checked}
@@ -19,10 +16,10 @@ export const Checkbox: FC<InputHTMLAttributes<HTMLInputElement>> = ({
       type="checkbox"
       {...forwardedProps}
     />
-    <span className={styles.input}>
-      <Icon className={styles.checkIcon} icon={CheckIcon} />
-    </span>
-  </div>
+    <Input>
+      <StyledIcon icon={CheckIcon} />
+    </Input>
+  </CheckboxContainer>
 );
 
 Checkbox.displayName = 'Checkbox';
