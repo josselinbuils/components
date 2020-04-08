@@ -123,7 +123,6 @@ export const StyledButton = styled.button<{ color: string; size: string }>`
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   text-align: center;
-  cursor: pointer;
   font-size: ${fontSize};
   outline: none;
   display: inline-flex;
@@ -140,6 +139,8 @@ export const StyledButton = styled.button<{ color: string; size: string }>`
   }
 
   &:not(:disabled) {
+    cursor: pointer;
+
     ${({ color }) => colors[color]};
   }
 `;
