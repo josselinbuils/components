@@ -1,17 +1,33 @@
 import React, { FC } from 'react';
-import { Card } from '../Card';
+import styled from 'styled-components';
+import { Card, CardProps } from '../Card';
 
-import styles from './ColorCard.module.scss';
+const StyledCard = styled(Card)`
+  height: 230px;
+  margin-top: 25px;
+  margin-left: 45px;
 
-export const ColorCard: FC<Props> = ({ color, title }) => (
-  <Card className={styles.colorCard}>
-    <div className={styles.preview} style={{ background: color }} />
+  p {
+    margin: 0;
+    color: #424242;
+  }
+`;
+
+const Preview = styled.div`
+  width: 160px;
+  height: 160px;
+  margin-bottom: 7px;
+`;
+
+export const ColorCard: FC<Props> = ({ color, title, ...forwardedProps }) => (
+  <StyledCard {...forwardedProps}>
+    <Preview style={{ background: color }} />
     <p>{title}</p>
     <p>{color}</p>
-  </Card>
+  </StyledCard>
 );
 
-interface Props {
+interface Props extends CardProps {
   color: string;
   title: string;
 }

@@ -1,21 +1,26 @@
-import React, { FC } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
+import styled from 'styled-components';
 
-import styles from './FlexContainer.module.scss';
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 export const FlexContainer: FC<Props> = ({
   children,
   offsetLeft,
   offsetTop,
+  ...forwardedProps
 }) => (
-  <div
-    className={styles.flexContainer}
+  <Container
     style={{ marginLeft: `${offsetLeft}px`, marginTop: `${offsetTop}px` }}
+    {...forwardedProps}
   >
     {children}
-  </div>
+  </Container>
 );
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   offsetLeft: number;
   offsetTop: number;
 }
