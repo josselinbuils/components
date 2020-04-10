@@ -1,20 +1,12 @@
 import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
-import { Icon } from '../Icon';
-import {
-  black,
-  greyDark,
-  greyDarker,
-  greyMed,
-  primary,
-  white,
-} from '../styles/colors';
+import { black, greyDark, greyMed, primary, white } from '../styles/colors';
 import { component } from '../styles/mixins';
-import { border, borderRadius, fontSizeL } from '../styles/variables';
+import { border } from '../styles/variables';
 
 export const Input = styled.span`
   border: ${border} ${greyDark};
-  border-radius: ${borderRadius};
+  border-radius: 100%;
   box-sizing: border-box;
   content: '';
   height: 100%;
@@ -28,18 +20,7 @@ export const Input = styled.span`
   text-align: center;
 `;
 
-export const StyledIcon = styled(Icon)`
-  color: ${white};
-  opacity: 0;
-  transition: opacity 0.15s ease-in-out;
-  font-size: ${fontSizeL};
-
-  svg {
-    stroke-width: 4px;
-  }
-`;
-
-export const CheckboxContainer = styled.div`
+export const RadioContainer = styled.div`
   ${component};
 
   position: relative;
@@ -58,23 +39,26 @@ export const CheckboxContainer = styled.div`
     margin: 0;
     appearance: none;
 
-    &:checked + ${Input} > ${StyledIcon} {
-      opacity: 1;
-    }
-
     &:disabled + ${Input} {
       border-color: ${greyMed};
       background-color: ${greyMed};
-
-      ${StyledIcon} {
-        color: ${greyDarker};
-      }
     }
 
     &:not(:disabled) {
       &:checked + ${Input} {
-        border-color: ${primary};
-        background-color: ${primary};
+        border-color: #12b900;
+
+        &:before {
+          content: ' ';
+          position: absolute;
+          display: block;
+          background-color: ${primary};
+          border-radius: 100%;
+          top: ${rem('2px')};
+          left: ${rem('2px')};
+          width: calc(100% - ${rem('4px')});
+          height: calc(100% - ${rem('4px')});
+        }
       }
 
       &:focus + ${Input} {
