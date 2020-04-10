@@ -48,7 +48,7 @@ export const RadioContainer = styled.div`
       &:checked + ${Input} {
         border-color: #12b900;
 
-        &:before {
+        &::before {
           content: ' ';
           position: absolute;
           display: block;

@@ -8,7 +8,7 @@ export const Radio: FC<InputHTMLAttributes<HTMLInputElement>> = ({
 }) => (
   <RadioContainer className={className} style={style}>
     <input type="radio" {...forwardedProps} />
-    <Input />
+    <Input aria-hidden />
   </RadioContainer>
 );
 

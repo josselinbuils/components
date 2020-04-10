@@ -9,7 +9,7 @@ export const Checkbox: FC<InputHTMLAttributes<HTMLInputElement>> = ({
 }) => (
   <CheckboxContainer className={className} style={style}>
     <input type="checkbox" {...forwardedProps} />
-    <Input>
+    <Input aria-hidden>
       <StyledIcon icon={CheckIcon} />
     </Input>
   </CheckboxContainer>
