@@ -1,14 +1,14 @@
 import { darken, lighten, rem } from 'polished';
 import styled, { css } from 'styled-components';
-import { error, info, success, warning } from '../../styles/colors';
-import { component } from '../../styles/mixins';
+import { error, info, success, warning } from '../styles/colors';
+import { component } from '../styles/mixins';
 import {
   border,
   borderRadius,
   fontSizeM,
   halfSpace,
   space,
-} from '../../styles/variables';
+} from '../styles/variables';
 
 const colors = { error, info, success, warning } as { [color: string]: string };
 

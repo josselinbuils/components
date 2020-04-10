@@ -1,18 +1,17 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "rootDir": ".",
     "declaration": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "lib": [
-      "dom",
-      "esnext"
+      "esnext",
+      "dom"
     ],
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
-    "outDir": "",
+    "outDir": "dist",
     "strict": true,
     "target": "esnext"
   },

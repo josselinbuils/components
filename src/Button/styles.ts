@@ -1,5 +1,6 @@
 import { darken, lighten, rem } from 'polished';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import { Icon } from '../Icon';
 import {
   greyDark,
   greyDarker,
@@ -7,8 +8,8 @@ import {
   primary,
   secondary,
   white,
-} from '../../styles/colors';
-import { component } from '../../styles/mixins';
+} from '../styles/colors';
+import { component } from '../styles/mixins';
 import {
   border,
   borderRadius,
@@ -16,10 +17,9 @@ import {
   halfSpace,
   quarterSpace,
   space,
-} from '../../styles/variables';
-import { Icon } from '../Icon';
+} from '../styles/variables';
 
-const colors = {
+const variants = {
   ghost: css`
     border-color: ${primary};
     background-color: ${white};
@@ -85,7 +85,7 @@ const colors = {
       }
     }
   `,
-} as { [color: string]: FlattenSimpleInterpolation };
+} as { [variant: string]: FlattenSimpleInterpolation };
 
 const sizes = {
   large: css`
@@ -115,7 +115,7 @@ export const Content = styled.span`{
   display: inline-block;
 `;
 
-export const StyledButton = styled.button<{ color: string; size: string }>`
+export const StyledButton = styled.button<{ size: string; variant: string }>`
   ${component};
 
   border: ${border} transparent;
@@ -141,7 +141,7 @@ export const StyledButton = styled.button<{ color: string; size: string }>`
   &:not(:disabled) {
     cursor: pointer;
 
-    ${({ color }) => colors[color]};
+    ${({ variant }) => variants[variant]};
   }
 `;
 

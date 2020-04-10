@@ -6,23 +6,27 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "add:staged": "exec-staged 'git add' '\\.(js|tsx?|scss)$'",
+    "add:staged": "exec-staged 'git add' '\\.(js|tsx?)$'",
     "build": "yarn build:lib && yarn build:doc",
     "build:doc": "rimraf .docz && docz build --base /components && cpx \".docz/dist/**/*\" doc && rimraf .docz",
     "build:lib": "rimraf dist && rollup -c && yarn copy:package-files",
     "copy:package-files": "cpx ./LICENSE dist && cpx ./package.json dist && cpx ./README.md dist ",
-    "csscomb:staged": "exec-staged 'csscomb -v' '\\.scss$'",
     "dev": "rimraf .docz && docz dev",
     "lint": "tslint -p tsconfig.json",
     "lint:staged": "exec-staged 'yarn lint' '^src.*\\.tsx?$'",
-    "prettier:staged": "exec-staged 'prettier --write' '\\.(js|tsx?|scss)$'",
+    "prettier:staged": "exec-staged 'prettier --write' '\\.(js|tsx?)$'",
     "start:doc": "node server.js",
     "test": "jest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint:staged && yarn prettier:staged && yarn csscomb:staged && yarn add:staged"
+      "pre-commit": "yarn lint:staged && yarn prettier:staged && yarn add:staged"
     }
+  },
+  "dependencies": {
+    "polished": "^3",
+    "rollup-plugin-typescript": "^1.0.1",
+    "styled-components": "^5"
   },
   "peerDependencies": {
     "react": "^16",
@@ -33,21 +37,13 @@
     "@josselinbuils/tslint": "^5.1.0",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
-    "@types/classnames": "^2.2.10",
-    "@types/enzyme": "^3.10.5",
-    "@types/jest": "^25.1.5",
+    "@rollup/plugin-typescript": "^4.0.0",
     "@types/styled-components": "^5.0.1",
     "cpx": "^1.5.0",
-    "csscomb": "^4.3.0",
     "docz": "^2.3.0",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.4.4",
     "express": "^4.17.1",
     "husky": "^4.2.3",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^25.2.7",
-    "polished": "^3.5.1",
     "prettier": "^2.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -55,13 +51,11 @@
     "rollup": "^2.3.2",
     "rollup-plugin-multi-input": "^1.1.1",
     "rollup-plugin-progress": "^1.1.1",
-    "rollup-plugin-typescript2": "^0.27.0",
     "serve-static": "^1.14.1",
-    "styled-components": "^5.1.0",
-    "ts-jest": "^25.3.1",
+    "tslib": "^1.11.1",
     "tslint": "^6.1.1",
     "tslint-react-a11y": "^1.1.0",
-    "typescript": "~3.4.5"
+    "typescript": "^3.8.3"
   },
   "browserslist": [
     "defaults"

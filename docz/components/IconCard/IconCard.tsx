@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Icon, IconSVGComponent } from '../../../components/Icon';
+import { Icon, IconSVGComponent } from '../../../src/Icon';
 import { Card, CardProps } from '../Card';
 
 const StyledCard = styled(Card)`

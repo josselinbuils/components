@@ -4,12 +4,12 @@ import { Content, StyledButton, StyledIcon } from './styles';
 
 export const Button: FC<Props> = ({
   children,
-  color = 'light',
   icon: IconSVG,
   size = 'medium',
+  variant = 'light',
   ...forwardedProps
 }) => (
-  <StyledButton color={color} size={size} {...forwardedProps}>
+  <StyledButton size={size} variant={variant} {...forwardedProps}>
     {IconSVG && <StyledIcon icon={IconSVG} />}
     {children && <Content>{children}</Content>}
   </StyledButton>
@@ -18,10 +18,10 @@ export const Button: FC<Props> = ({
 Button.displayName = 'Button';
 
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
-  /** @default light */
-  color?: 'primary' | 'secondary' | 'ghost' | 'light';
   /** See Icon component */
   icon?: IconSVGComponent;
   /** @default medium */
   size?: 'large' | 'medium' | 'small' | 'extraSmall';
+  /** @default light */
+  variant?: 'primary' | 'secondary' | 'ghost' | 'light';
 }

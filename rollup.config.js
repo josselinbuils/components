@@ -1,8 +1,10 @@
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 import multiInput from 'rollup-plugin-multi-input';
 import progress from 'rollup-plugin-progress';
-import typescript from 'rollup-plugin-typescript2';
+
+import { dependencies, peerDependencies } from './package.json';
 
 export default {
   input: ['src/**/index.ts', '!src/doc'],
@@ -10,16 +12,16 @@ export default {
     dir: 'dist',
     format: 'esm',
   },
-  external: ['react', 'react-dom'],
+  external: [...Object.keys(dependencies), ...Object.keys(peerDependencies)],
   plugins: [
-    multiInput({ relative: 'src/components' }),
+    multiInput({ relative: 'src' }),
     nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
     commonjs({
       namedExports: {
         'react-is': ['isElement', 'isValidElementType', 'typeOf'],
       },
     }),
-    typescript({ tsconfig: './tsconfig.rollup.json' }),
+    typescript({ rootDir: './src' }),
     progress(),
   ],
 };

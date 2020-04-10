@@ -1,5 +1,6 @@
 import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
+import { Icon } from '../Icon';
 import {
   black,
   greyDark,
@@ -7,10 +8,9 @@ import {
   greyMed,
   primary,
   white,
-} from '../../styles/colors';
-import { component } from '../../styles/mixins';
-import { border, borderRadius, fontSizeL } from '../../styles/variables';
-import { Icon } from '../Icon';
+} from '../styles/colors';
+import { component } from '../styles/mixins';
+import { border, borderRadius, fontSizeL } from '../styles/variables';
 
 export const Input = styled.span`
   border: ${border} ${greyDark};
