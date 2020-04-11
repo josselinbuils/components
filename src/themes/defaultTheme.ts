@@ -14,16 +14,16 @@ const colors = {
   error: '#df3f2e',
 
   // Grey shades
-  grey50: '#fafafa',
-  grey100: '#f5f5f5',
-  grey200: '#eeeeee',
-  grey300: '#e0e0e0',
-  grey400: '#bdbdbd',
-  grey500: '#9e9e9e',
-  grey600: '#757575',
-  grey700: '#616161',
-  grey800: '#424242',
-  grey900: '#212121',
+  grey12: '#212121',
+  grey25: '#424242',
+  grey38: '#616161',
+  grey45: '#757575',
+  grey61: '#9e9e9e',
+  grey74: '#bdbdbd',
+  grey87: '#e0e0e0',
+  grey93: '#eeeeee',
+  grey96: '#f5f5f5',
+  grey98: '#fafafa',
 
   // Not colors
   black: '#000000',

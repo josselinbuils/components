@@ -3,7 +3,7 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { Icon } from '../Icon';
 import { themeColors, themeMixins, themeVariables } from '../themes';
 
-const { grey200, grey300, grey400, primary, secondary, white } = themeColors;
+const { grey74, grey87, grey93, primary, secondary, white } = themeColors;
 const { component } = themeMixins;
 const {
   border,
@@ -35,19 +35,19 @@ const variants = {
     }
   `,
   light: css`
-    border-color: ${grey300};
+    border-color: ${grey87};
     background-color: ${white};
     color: ${(props) => darken(0.3, primary(props))};
 
     &:active {
       border-color: transparent;
-      box-shadow: 0 0 0 ${borderWidth} ${grey300};
+      box-shadow: 0 0 0 ${borderWidth} ${grey87};
     }
 
     &:not(:active) {
       &:focus,
       &:hover {
-        background-color: ${grey200};
+        background-color: ${grey93};
       }
     }
   `,
@@ -130,8 +130,8 @@ export const StyledButton = styled.button<{ size: string; variant: string }>`
   ${({ size }) => sizes[size]};
 
   &:disabled {
-    color: ${grey400};
-    background-color: ${grey200};
+    color: ${grey74};
+    background-color: ${grey93};
     border-color: transparent;
   }
 

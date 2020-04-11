@@ -12,16 +12,16 @@ export interface ThemeColors {
   error: string;
 
   // Grey shades
-  grey50: string;
-  grey100: string;
-  grey200: string;
-  grey300: string;
-  grey400: string;
-  grey500: string;
-  grey600: string;
-  grey700: string;
-  grey800: string;
-  grey900: string;
+  grey12: string;
+  grey25: string;
+  grey38: string;
+  grey45: string;
+  grey61: string;
+  grey74: string;
+  grey87: string;
+  grey93: string;
+  grey96: string;
+  grey98: string;
 
   // Not colors
   black: string;

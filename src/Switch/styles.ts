@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { remFloat } from '../helpers';
 import { Theme, themeColors, themeMixins, themeVariables } from '../themes';
 
-const { black, grey200, grey300, primary, white } = themeColors;
+const { black, grey87, grey93, primary, white } = themeColors;
 const { component } = themeMixins;
 const { border, borderWidth } = themeVariables;
 
@@ -14,9 +14,9 @@ const offset = (props: { theme: Theme }) =>
 const toggleSize = css`calc(${height} - (${offset} + ${borderWidth}) * 2)`;
 
 export const Input = styled.span`
-  border: ${border} ${grey200};
+  border: ${border} ${grey93};
   border-radius: calc(${height} / 2);
-  background-color: ${grey200};
+  background-color: ${grey93};
   box-sizing: border-box;
   content: '';
   height: 100%;
@@ -66,7 +66,7 @@ export const SwitchContainer = styled.div`
     }
 
     &:disabled + ${Input}::after {
-      background-color: ${grey300};
+      background-color: ${grey87};
     }
 
     &:not(:disabled) {

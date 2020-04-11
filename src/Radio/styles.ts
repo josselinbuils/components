@@ -2,12 +2,12 @@ import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
 import { themeColors, themeMixins, themeVariables } from '../themes';
 
-const { black, grey200, grey300, primary, white } = themeColors;
+const { black, grey87, grey93, primary, white } = themeColors;
 const { component } = themeMixins;
 const { border, borderWidth } = themeVariables;
 
 export const Input = styled.span`
-  border: ${border} ${grey300};
+  border: ${border} ${grey87};
   border-radius: 100%;
   box-sizing: border-box;
   content: '';
@@ -45,8 +45,8 @@ export const RadioContainer = styled.div`
     appearance: none;
 
     &:disabled + ${Input} {
-      border-color: ${grey200};
-      background-color: ${grey200};
+      border-color: ${grey93};
+      background-color: ${grey93};
     }
 
     &:not(:disabled) {

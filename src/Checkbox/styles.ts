@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { Icon } from '../Icon';
 import { themeColors, themeMixins, themeVariables } from '../themes';
 
-const { black, grey200, grey300, grey400, primary, white } = themeColors;
+const { black, grey74, grey87, grey93, primary, white } = themeColors;
 const { component } = themeMixins;
 const { border, borderRadius, fontSizeL } = themeVariables;
 
 const size = rem('24px');
 
 export const Input = styled.span`
-  border: ${border} ${grey300};
+  border: ${border} ${grey87};
   border-radius: ${borderRadius};
   box-sizing: border-box;
   content: '';
@@ -61,11 +61,11 @@ export const CheckboxContainer = styled.div`
     }
 
     &:disabled + ${Input} {
-      border-color: ${grey200};
-      background-color: ${grey200};
+      border-color: ${grey93};
+      background-color: ${grey93};
 
       ${StyledIcon} {
-        color: ${grey400};
+        color: ${grey74};
       }
     }
 
