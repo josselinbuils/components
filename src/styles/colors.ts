@@ -1,6 +1,6 @@
 // Theme colors
-export const primary = '#12b900';
-export const secondary = '#007ad8';
+export const primary = '#007ad8';
+export const secondary = '#12a500';
 export const success = '#3cb34c';
 export const info = '#15b1ce';
 export const warning = '#ff8a00';
