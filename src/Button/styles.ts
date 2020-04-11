@@ -2,9 +2,9 @@ import { darken, lighten, rem } from 'polished';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { Icon } from '../Icon';
 import {
-  greyDark,
-  greyDarker,
-  greyMed,
+  grey200,
+  grey300,
+  grey400,
   primary,
   secondary,
   white,
@@ -41,19 +41,19 @@ const variants = {
     }
   `,
   light: css`
-    border-color: ${greyDark};
+    border-color: ${grey300};
     background-color: ${white};
     color: ${darken(0.3, primary)};
 
     &:active {
       border-color: transparent;
-      box-shadow: 0 0 0 ${borderWidth} ${greyDark};
+      box-shadow: 0 0 0 ${borderWidth} ${grey300};
     }
 
     &:not(:active) {
       &:focus,
       &:hover {
-        background-color: ${greyMed};
+        background-color: ${grey200};
       }
     }
   `,
@@ -136,8 +136,8 @@ export const StyledButton = styled.button<{ size: string; variant: string }>`
   ${({ size }) => sizes[size]};
 
   &:disabled {
-    color: ${greyDarker};
-    background-color: ${greyMed};
+    color: ${grey400};
+    background-color: ${grey200};
     border-color: transparent;
   }
 

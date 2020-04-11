@@ -1,6 +1,6 @@
 import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
-import { black, greyDark, greyMed, primary, white } from '../styles/colors';
+import { black, grey200, grey300, primary, white } from '../styles/colors';
 import { remFloat } from '../styles/helpers';
 import { component } from '../styles/mixins';
 import { border, borderWidth } from '../styles/variables';
@@ -8,7 +8,7 @@ import { border, borderWidth } from '../styles/variables';
 const offset = `${Math.max(remFloat(borderWidth), remFloat('2px'))}rem`;
 
 export const Input = styled.span`
-  border: ${border} ${greyDark};
+  border: ${border} ${grey300};
   border-radius: 100%;
   box-sizing: border-box;
   content: '';
@@ -46,8 +46,8 @@ export const RadioContainer = styled.div`
     appearance: none;
 
     &:disabled + ${Input} {
-      border-color: ${greyMed};
-      background-color: ${greyMed};
+      border-color: ${grey200};
+      background-color: ${grey200};
     }
 
     &:not(:disabled) {

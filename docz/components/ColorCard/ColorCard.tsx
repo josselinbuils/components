@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Card, CardProps } from '../Card';
 
 const StyledCard = styled(Card)`
-  height: 195px;
+  height: 225px;
   margin-top: 25px;
   margin-left: 45px;
 

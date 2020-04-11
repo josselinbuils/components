@@ -7,21 +7,37 @@ import { ColorCard, FlexContainer } from './components'
 
 # Colors
 
+## Main
+
 <FlexContainer offsetLeft={-45} offsetTop={-15}>
-  <ColorCard color="#12b900" />
-  <ColorCard color="#007ad8" />
+  <ColorCard color="#12b900" title="primary" />
+  <ColorCard color="#007ad8" title="secondary" />
 </FlexContainer>
-<FlexContainer offsetLeft={-45}>
-  <ColorCard color="#3cb34c" />
-  <ColorCard color="#15b1ce" />
-  <ColorCard color="#ff8a00" />
-  <ColorCard color="#df3f2e" />
+
+<br />
+
+## Error levels
+
+<FlexContainer offsetLeft={-45} offsetTop={-15}>
+  <ColorCard color="#3cb34c" title="success" />
+  <ColorCard color="#15b1ce" title="info" />
+  <ColorCard color="#ff8a00" title="warning" />
+  <ColorCard color="#df3f2e" title="error" />
 </FlexContainer>
-<FlexContainer offsetLeft={-45}>
-  <ColorCard color="#424242" />
-  <ColorCard color="#7c7c7c" />
-  <ColorCard color="#b4b4b4" />
-  <ColorCard color="#d4d4d4" />
-  <ColorCard color="#e8e8e8" />
-  <ColorCard color="#fafafa" />
+
+<br />
+
+## Grey shades
+
+<FlexContainer offsetLeft={-45} offsetTop={-15}>
+  <ColorCard color="#fafafa" title="grey50" />
+  <ColorCard color="#f5f5f5" title="grey100" />
+  <ColorCard color="#eeeeee" title="grey200" />
+  <ColorCard color="#e0e0e0" title="grey300" />
+  <ColorCard color="#bdbdbd" title="grey400" />
+  <ColorCard color="#9e9e9e" title="grey500" />
+  <ColorCard color="#757575" title="grey600" />
+  <ColorCard color="#616161" title="grey700" />
+  <ColorCard color="#424242" title="grey800" />
+  <ColorCard color="#212121" title="grey900" />
 </FlexContainer>

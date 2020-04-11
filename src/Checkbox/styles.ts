@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { Icon } from '../Icon';
 import {
   black,
-  greyDark,
-  greyDarker,
-  greyMed,
+  grey200,
+  grey300,
+  grey400,
   primary,
   white,
 } from '../styles/colors';
@@ -15,7 +15,7 @@ import { border, borderRadius, fontSizeL } from '../styles/variables';
 const size = rem('24px');
 
 export const Input = styled.span`
-  border: ${border} ${greyDark};
+  border: ${border} ${grey300};
   border-radius: ${borderRadius};
   box-sizing: border-box;
   content: '';
@@ -66,11 +66,11 @@ export const CheckboxContainer = styled.div`
     }
 
     &:disabled + ${Input} {
-      border-color: ${greyMed};
-      background-color: ${greyMed};
+      border-color: ${grey200};
+      background-color: ${grey200};
 
       ${StyledIcon} {
-        color: ${greyDarker};
+        color: ${grey400};
       }
     }
 

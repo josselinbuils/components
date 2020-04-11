@@ -1,6 +1,6 @@
 import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
-import { black, greyDark, greyMed, primary, white } from '../styles/colors';
+import { black, grey200, grey300, primary, white } from '../styles/colors';
 import { remFloat } from '../styles/helpers';
 import { component } from '../styles/mixins';
 import { border, borderWidth } from '../styles/variables';
@@ -11,9 +11,9 @@ const offset = `${Math.max(remFloat('2px') - remFloat(borderWidth), 0)}rem`;
 const toggleSize = `calc(${height} - (${offset} + ${borderWidth}) * 2)`;
 
 export const Input = styled.span`
-  border: ${border} ${greyMed};
+  border: ${border} ${grey200};
   border-radius: ${remFloat(height) / 2}rem;
-  background-color: ${greyMed};
+  background-color: ${grey200};
   box-sizing: border-box;
   content: '';
   height: 100%;
@@ -63,7 +63,7 @@ export const SwitchContainer = styled.div`
     }
 
     &:disabled + ${Input}::after {
-      background-color: ${greyDark};
+      background-color: ${grey300};
     }
 
     &:not(:disabled) {
