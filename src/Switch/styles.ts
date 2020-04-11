@@ -1,18 +1,21 @@
 import { rem, transparentize } from 'polished';
-import styled from 'styled-components';
-import { black, grey200, grey300, primary, white } from '../styles/colors';
-import { remFloat } from '../styles/helpers';
-import { component } from '../styles/mixins';
-import { border, borderWidth } from '../styles/variables';
+import styled, { css } from 'styled-components';
+import { remFloat } from '../helpers';
+import { Theme, themeColors, themeMixins, themeVariables } from '../themes';
+
+const { black, grey200, grey300, primary, white } = themeColors;
+const { component } = themeMixins;
+const { border, borderWidth } = themeVariables;
 
 const width = rem('44px');
 const height = rem('24px');
-const offset = `${Math.max(remFloat('2px') - remFloat(borderWidth), 0)}rem`;
-const toggleSize = `calc(${height} - (${offset} + ${borderWidth}) * 2)`;
+const offset = (props: { theme: Theme }) =>
+  `${Math.max(remFloat('2px') - remFloat(borderWidth(props) as string), 0)}rem`;
+const toggleSize = css`calc(${height} - (${offset} + ${borderWidth}) * 2)`;
 
 export const Input = styled.span`
   border: ${border} ${grey200};
-  border-radius: ${remFloat(height) / 2}rem;
+  border-radius: calc(${height} / 2);
   background-color: ${grey200};
   box-sizing: border-box;
   content: '';
@@ -27,7 +30,7 @@ export const Input = styled.span`
   display: flex;
   align-items: center;
 
-  &:after {
+  &::after {
     content: ' ';
     display: block;
     background-color: ${white};
@@ -69,9 +72,11 @@ export const SwitchContainer = styled.div`
     &:not(:disabled) {
       & + ${Input}::after {
         box-shadow: 0 ${rem('3px')} ${rem('1px')} 0
-            ${transparentize(0.95, black)},
-          0 ${rem('2px')} ${rem('2px')} 0 ${transparentize(0.9, black)},
-          0 ${rem('3px')} ${rem('3px')} 0 ${transparentize(0.95, black)};
+            ${(props) => transparentize(0.95, black(props))},
+          0 ${rem('2px')} ${rem('2px')} 0
+            ${(props) => transparentize(0.9, black(props))},
+          0 ${rem('3px')} ${rem('3px')} 0
+            ${(props) => transparentize(0.95, black(props))};
       }
 
       &:checked + ${Input} {
@@ -80,7 +85,8 @@ export const SwitchContainer = styled.div`
       }
 
       &:focus + ${Input} {
-        box-shadow: 0 0 ${rem('4px')} 0 ${transparentize(0.5, black)};
+        box-shadow: 0 0 ${rem('4px')} 0
+          ${(props) => transparentize(0.5, black(props))};
       }
     }
   }

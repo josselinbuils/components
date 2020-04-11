@@ -1,5 +1,7 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
-import { borderWidth } from '../styles/variables';
+import { themeVariables } from '../themes';
+
+const { borderWidth } = themeVariables;
 
 const orientations = {
   horizontal: css`

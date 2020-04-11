@@ -1,11 +1,10 @@
 import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
-import { black, grey200, grey300, primary, white } from '../styles/colors';
-import { remFloat } from '../styles/helpers';
-import { component } from '../styles/mixins';
-import { border, borderWidth } from '../styles/variables';
+import { themeColors, themeMixins, themeVariables } from '../themes';
 
-const offset = `${Math.max(remFloat(borderWidth), remFloat('2px'))}rem`;
+const { black, grey200, grey300, primary, white } = themeColors;
+const { component } = themeMixins;
+const { border, borderWidth } = themeVariables;
 
 export const Input = styled.span`
   border: ${border} ${grey300};
@@ -60,14 +59,19 @@ export const RadioContainer = styled.div`
           display: block;
           background-color: ${primary};
           border-radius: 100%;
-          width: calc(100% - ${offset} * 2);
-          height: calc(100% - ${offset} * 2);
+          width: calc(
+            100% - ${(props) => `max(${borderWidth(props)}, ${rem('2px')})`} * 2
+          );
+          height: calc(
+            100% - ${(props) => `max(${borderWidth(props)}, ${rem('2px')})`} * 2
+          );
         }
       }
 
       &:focus + ${Input} {
         border-color: ${primary};
-        box-shadow: 0 0 ${rem('4px')} 0 ${transparentize(0.5, black)};
+        box-shadow: 0 0 ${rem('4px')} 0
+          ${(props) => transparentize(0.5, black(props))};
       }
 
       &:hover + ${Input} {

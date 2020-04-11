@@ -1,16 +1,15 @@
 import { darken, lighten, rem } from 'polished';
 import styled, { css } from 'styled-components';
-import { error, info, success, warning } from '../styles/colors';
-import { component } from '../styles/mixins';
 import {
-  border,
-  borderRadius,
-  fontSizeM,
-  halfSpace,
-  space,
-} from '../styles/variables';
+  ThemeColors,
+  themeColors,
+  themeMixins,
+  themeVariables,
+} from '../themes';
 
-const colors = { error, info, success, warning } as { [color: string]: string };
+const { error } = themeColors;
+const { component } = themeMixins;
+const { border, borderRadius, fontSizeM, halfSpace, space } = themeVariables;
 
 const alert = (color: string) => css`
   color: ${darken(0.2, color)};
@@ -33,7 +32,8 @@ export const AlertContainer = styled.div<{ level: string }>`
   border: ${border};
   border-radius: ${borderRadius};
 
-  ${({ level }) => alert(colors[level] || colors.error)};
+  ${({ level, ...props }) =>
+    alert(themeColors[level as keyof ThemeColors](props) || error(props))};
 `;
 
 export const IconContainer = styled.div`

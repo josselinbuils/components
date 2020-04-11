@@ -1,16 +1,11 @@
 import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
 import { Icon } from '../Icon';
-import {
-  black,
-  grey200,
-  grey300,
-  grey400,
-  primary,
-  white,
-} from '../styles/colors';
-import { component } from '../styles/mixins';
-import { border, borderRadius, fontSizeL } from '../styles/variables';
+import { themeColors, themeMixins, themeVariables } from '../themes';
+
+const { black, grey200, grey300, grey400, primary, white } = themeColors;
+const { component } = themeMixins;
+const { border, borderRadius, fontSizeL } = themeVariables;
 
 const size = rem('24px');
 
@@ -82,7 +77,8 @@ export const CheckboxContainer = styled.div`
 
       &:focus + ${Input} {
         border-color: ${primary};
-        box-shadow: 0 0 ${rem('4px')} 0 ${transparentize(0.5, black)};
+        box-shadow: 0 0 ${rem('4px')} 0
+          ${(props) => transparentize(0.5, black(props))};
       }
 
       &:hover + ${Input} {

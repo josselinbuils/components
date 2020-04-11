@@ -1,17 +1,11 @@
 import { darken, lighten, rem } from 'polished';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { Icon } from '../Icon';
-import {
-  grey200,
-  grey300,
-  grey400,
-  primary,
-  secondary,
-  white,
-} from '../styles/colors';
-import { remFloat } from '../styles/helpers';
-import { component } from '../styles/mixins';
-import {
+import { themeColors, themeMixins, themeVariables } from '../themes';
+
+const { grey200, grey300, grey400, primary, secondary, white } = themeColors;
+const { component } = themeMixins;
+const {
   border,
   borderRadius,
   borderWidth,
@@ -19,7 +13,7 @@ import {
   halfSpace,
   quarterSpace,
   space,
-} from '../styles/variables';
+} = themeVariables;
 
 const variants = {
   ghost: css`
@@ -43,7 +37,7 @@ const variants = {
   light: css`
     border-color: ${grey300};
     background-color: ${white};
-    color: ${darken(0.3, primary)};
+    color: ${(props) => darken(0.3, primary(props))};
 
     &:active {
       border-color: transparent;
@@ -68,7 +62,7 @@ const variants = {
     &:not(:active) {
       &:focus,
       &:hover {
-        background-color: ${lighten(0.1, primary)};
+        background-color: ${(props) => lighten(0.1, primary(props))};
       }
     }
   `,
@@ -83,7 +77,7 @@ const variants = {
     &:not(:active) {
       &:focus,
       &:hover {
-        background-color: ${lighten(0.1, secondary)};
+        background-color: ${(props) => lighten(0.1, secondary(props))};
       }
     }
   `,
@@ -101,7 +95,7 @@ const sizes = {
     min-width: ${rem('50px')};
   `,
   small: css`
-    padding: ${quarterSpace} ${remFloat(halfSpace) + remFloat(quarterSpace)}rem;
+    padding: ${quarterSpace} calc(${halfSpace} + ${quarterSpace});
     height: ${rem('42px')};
     min-width: ${rem('42px')};
   `,
