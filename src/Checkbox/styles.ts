@@ -1,11 +1,11 @@
 import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
 import { Icon } from '../Icon';
-import { themeColors, themeMixins, themeVariables } from '../themes';
+import { colors, mixins, variables } from '../themes';
 
-const { black, grey74, grey87, grey93, primary, white } = themeColors;
-const { component } = themeMixins;
-const { border, borderRadius, fontSizeL } = themeVariables;
+const { black, grey74, grey87, grey93, primary, white } = colors;
+const { component } = mixins;
+const { border, borderRadius, fontSizeL } = variables;
 
 const size = rem('24px');
 

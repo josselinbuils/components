@@ -1,11 +1,11 @@
 import { rem, transparentize } from 'polished';
 import styled, { css } from 'styled-components';
 import { remFloat } from '../helpers';
-import { Theme, themeColors, themeMixins, themeVariables } from '../themes';
+import { colors, mixins, Theme, variables } from '../themes';
 
-const { black, grey87, grey93, primary, white } = themeColors;
-const { component } = themeMixins;
-const { border, borderWidth } = themeVariables;
+const { black, grey87, grey93, primary, white } = colors;
+const { component } = mixins;
+const { border, borderWidth } = variables;
 
 const width = rem('44px');
 const height = rem('24px');

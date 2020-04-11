@@ -1,10 +1,10 @@
 import { darken, lighten, rem } from 'polished';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { Icon } from '../Icon';
-import { themeColors, themeMixins, themeVariables } from '../themes';
+import { colors, mixins, variables } from '../themes';
 
-const { grey74, grey87, grey93, primary, secondary, white } = themeColors;
-const { component } = themeMixins;
+const { grey74, grey87, grey93, primary, secondary, white } = colors;
+const { component } = mixins;
 const {
   border,
   borderRadius,
@@ -13,7 +13,7 @@ const {
   halfSpace,
   quarterSpace,
   space,
-} = themeVariables;
+} = variables;
 
 const variants = {
   ghost: css`

@@ -2,7 +2,7 @@ import { FlattenSimpleInterpolation } from 'styled-components';
 import { defaultTheme } from './defaultTheme';
 import { Theme, ThemeMixins } from './Theme';
 
-export const themeMixins = {} as {
+export const mixins = {} as {
   [key in keyof ThemeMixins]: ({
     theme,
   }: {
@@ -12,6 +12,6 @@ export const themeMixins = {} as {
 
 Object.keys(defaultTheme.mixins).forEach(
   (mixin) =>
-    (themeMixins[mixin as keyof ThemeMixins] = ({ theme }: { theme: Theme }) =>
+    (mixins[mixin as keyof ThemeMixins] = ({ theme }: { theme: Theme }) =>
       (theme.mixins || defaultTheme.mixins)[mixin as keyof ThemeMixins])
 );

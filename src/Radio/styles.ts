@@ -1,10 +1,10 @@
 import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
-import { themeColors, themeMixins, themeVariables } from '../themes';
+import { colors, mixins, variables } from '../themes';
 
-const { black, grey87, grey93, primary, white } = themeColors;
-const { component } = themeMixins;
-const { border, borderWidth } = themeVariables;
+const { black, grey87, grey93, primary, white } = colors;
+const { component } = mixins;
+const { border, borderWidth } = variables;
 
 export const Input = styled.span`
   border: ${border} ${grey87};

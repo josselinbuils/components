@@ -1,7 +1,7 @@
 import { defaultTheme } from './defaultTheme';
 import { Theme, ThemeVariables } from './Theme';
 
-export const themeVariables = {} as {
+export const variables = {} as {
   [key in keyof ThemeVariables]: ({
     theme,
   }: {
@@ -11,7 +11,7 @@ export const themeVariables = {} as {
 
 Object.keys(defaultTheme.variables).forEach(
   (variable) =>
-    (themeVariables[variable as keyof ThemeVariables] = ({
+    (variables[variable as keyof ThemeVariables] = ({
       theme,
     }: {
       theme: Theme;
