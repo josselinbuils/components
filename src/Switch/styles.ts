@@ -1,6 +1,6 @@
-import { darken, rem, transparentize } from 'polished';
+import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
-import { black, greyMed, primary, white } from '../styles/colors';
+import { black, greyDark, greyMed, primary, white } from '../styles/colors';
 import { remFloat } from '../styles/helpers';
 import { component } from '../styles/mixins';
 import { border, borderWidth } from '../styles/variables';
@@ -63,7 +63,7 @@ export const SwitchContainer = styled.div`
     }
 
     &:disabled + ${Input}::after {
-      background-color: ${darken(0.1, greyMed)};
+      background-color: ${greyDark};
     }
 
     &:not(:disabled) {
