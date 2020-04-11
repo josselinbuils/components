@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const IconContainer = styled.figure`
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   margin: 0;
 
   svg {
@@ -9,7 +12,6 @@ export const IconContainer = styled.figure`
     width: 1em;
     height: 1em;
     user-select: none;
-    vertical-align: -0.125em;
     fill: none;
     stroke: currentColor;
     stroke-width: 2;

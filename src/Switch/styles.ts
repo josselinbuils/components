@@ -1,12 +1,18 @@
-import { rem, transparentize } from 'polished';
+import { darken, rem, transparentize } from 'polished';
 import styled from 'styled-components';
-import { black, greyDarker, greyMed, primary, white } from '../styles/colors';
+import { black, greyMed, primary, white } from '../styles/colors';
+import { remFloat } from '../styles/helpers';
 import { component } from '../styles/mixins';
-import { border } from '../styles/variables';
+import { border, borderWidth } from '../styles/variables';
+
+const width = rem('44px');
+const height = rem('24px');
+const offset = `${Math.max(remFloat('2px') - remFloat(borderWidth), 0)}rem`;
+const toggleSize = `calc(${height} - (${offset} + ${borderWidth}) * 2)`;
 
 export const Input = styled.span`
   border: ${border} ${greyMed};
-  border-radius: ${rem('12px')};
+  border-radius: ${remFloat(height) / 2}rem;
   background-color: ${greyMed};
   box-sizing: border-box;
   content: '';
@@ -18,21 +24,18 @@ export const Input = styled.span`
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   text-align: center;
+  display: flex;
+  align-items: center;
 
   &:after {
     content: ' ';
-    position: absolute;
     display: block;
     background-color: ${white};
     border-radius: 100%;
-    top: ${rem('1px')};
-    right: ${rem('21px')};
-    width: ${rem('20px')};
-    height: ${rem('20px')};
-    transition: right 0.15s ease-in-out;
-    box-shadow: 0 ${rem('3px')} ${rem('1px')} 0 ${transparentize(0.95, black)},
-      0 ${rem('2px')} ${rem('2px')} 0 ${transparentize(0.9, black)},
-      0 ${rem('3px')} ${rem('3px')} 0 ${transparentize(0.95, black)};
+    margin-left: ${offset};
+    width: ${toggleSize};
+    height: ${toggleSize};
+    transition: margin-left 0.15s ease-in-out;
   }
 `;
 
@@ -40,8 +43,8 @@ export const SwitchContainer = styled.div`
   ${component};
 
   position: relative;
-  width: ${rem('44px')};
-  height: ${rem('24px')};
+  width: ${width};
+  height: ${height};
   display: inline-block;
 
   input {
@@ -56,14 +59,21 @@ export const SwitchContainer = styled.div`
     appearance: none;
 
     &:checked + ${Input}::after {
-      right: ${rem('1px')};
+      margin-left: calc(100% - ${toggleSize} - ${offset});
     }
 
     &:disabled + ${Input}::after {
-      background-color: ${greyDarker};
+      background-color: ${darken(0.1, greyMed)};
     }
 
     &:not(:disabled) {
+      & + ${Input}::after {
+        box-shadow: 0 ${rem('3px')} ${rem('1px')} 0
+            ${transparentize(0.95, black)},
+          0 ${rem('2px')} ${rem('2px')} 0 ${transparentize(0.9, black)},
+          0 ${rem('3px')} ${rem('3px')} 0 ${transparentize(0.95, black)};
+      }
+
       &:checked + ${Input} {
         background-color: ${primary};
         border-color: ${primary};

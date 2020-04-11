@@ -12,6 +12,8 @@ import {
 import { component } from '../styles/mixins';
 import { border, borderRadius, fontSizeL } from '../styles/variables';
 
+const size = rem('24px');
+
 export const Input = styled.span`
   border: ${border} ${greyDark};
   border-radius: ${borderRadius};
@@ -33,6 +35,7 @@ export const StyledIcon = styled(Icon)`
   opacity: 0;
   transition: opacity 0.15s ease-in-out;
   font-size: ${fontSizeL};
+  line-height: 1em;
 
   svg {
     stroke-width: 4px;
@@ -43,8 +46,8 @@ export const CheckboxContainer = styled.div`
   ${component};
 
   position: relative;
-  width: ${rem('24px')};
-  height: ${rem('24px')};
+  width: ${size};
+  height: ${size};
   display: inline-block;
 
   input {

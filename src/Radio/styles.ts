@@ -1,8 +1,11 @@
 import { rem, transparentize } from 'polished';
 import styled from 'styled-components';
 import { black, greyDark, greyMed, primary, white } from '../styles/colors';
+import { remFloat } from '../styles/helpers';
 import { component } from '../styles/mixins';
-import { border } from '../styles/variables';
+import { border, borderWidth } from '../styles/variables';
+
+const offset = `${Math.max(remFloat(borderWidth), remFloat('2px'))}rem`;
 
 export const Input = styled.span`
   border: ${border} ${greyDark};
@@ -18,6 +21,9 @@ export const Input = styled.span`
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const RadioContainer = styled.div`
@@ -46,7 +52,7 @@ export const RadioContainer = styled.div`
 
     &:not(:disabled) {
       &:checked + ${Input} {
-        border-color: #12b900;
+        border-color: ${primary};
 
         &::before {
           content: ' ';
@@ -54,10 +60,8 @@ export const RadioContainer = styled.div`
           display: block;
           background-color: ${primary};
           border-radius: 100%;
-          top: ${rem('2px')};
-          left: ${rem('2px')};
-          width: calc(100% - ${rem('4px')});
-          height: calc(100% - ${rem('4px')});
+          width: calc(100% - ${offset} * 2);
+          height: calc(100% - ${offset} * 2);
         }
       }
 

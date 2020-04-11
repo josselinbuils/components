@@ -9,10 +9,12 @@ import {
   secondary,
   white,
 } from '../styles/colors';
+import { remFloat } from '../styles/helpers';
 import { component } from '../styles/mixins';
 import {
   border,
   borderRadius,
+  borderWidth,
   fontSize,
   halfSpace,
   quarterSpace,
@@ -27,7 +29,7 @@ const variants = {
 
     &:active {
       border-color: transparent;
-      box-shadow: 0 0 0 ${rem('1px')} ${primary};
+      box-shadow: 0 0 0 ${borderWidth} ${primary};
     }
 
     &:not(:active) {
@@ -45,7 +47,7 @@ const variants = {
 
     &:active {
       border-color: transparent;
-      box-shadow: 0 0 0 ${rem('1px')} ${greyDark};
+      box-shadow: 0 0 0 ${borderWidth} ${greyDark};
     }
 
     &:not(:active) {
@@ -60,7 +62,7 @@ const variants = {
     color: ${white};
 
     &:active {
-      box-shadow: 0 0 0 ${rem('1px')} ${primary};
+      box-shadow: 0 0 0 ${borderWidth} ${primary};
     }
 
     &:not(:active) {
@@ -75,7 +77,7 @@ const variants = {
     color: ${white};
 
     &:active {
-      box-shadow: 0 0 0 ${rem('1px')} ${secondary};
+      box-shadow: 0 0 0 ${borderWidth} ${secondary};
     }
 
     &:not(:active) {
@@ -99,7 +101,7 @@ const sizes = {
     min-width: ${rem('50px')};
   `,
   small: css`
-    padding: ${quarterSpace} ${rem('12px')};
+    padding: ${quarterSpace} ${remFloat(halfSpace) + remFloat(quarterSpace)}rem;
     height: ${rem('42px')};
     min-width: ${rem('42px')};
   `,
@@ -129,6 +131,7 @@ export const StyledButton = styled.button<{ size: string; variant: string }>`
   align-items: center;
   justify-content: center;
   margin: 0;
+  box-sizing: border-box;
 
   ${({ size }) => sizes[size]};
 
