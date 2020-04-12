@@ -1,5 +1,5 @@
 import React, { FC, HTMLAttributes } from 'react';
-import { IconSVGComponent } from '../Icon';
+import { SVGComponent } from '../Icon';
 import { Content, StyledButton, StyledIcon } from './styles';
 
 export const Button: FC<Props> = ({
@@ -19,7 +19,7 @@ Button.displayName = 'Button';
 
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
   /** See Icon component */
-  icon?: IconSVGComponent;
+  icon?: SVGComponent;
   /** @default medium */
   size?: 'large' | 'medium' | 'small' | 'extraSmall';
   /** @default light */
