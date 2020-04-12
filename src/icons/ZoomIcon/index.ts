@@ -1,0 +1,1 @@
+export { ZoomIcon } from './ZoomIcon';

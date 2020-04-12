@@ -1,0 +1,1 @@
+export { ContrastIcon } from './ContrastIcon';
