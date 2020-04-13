@@ -1,3 +1,5 @@
+import commonjs from '@rollup/plugin-commonjs';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import multiInput from 'rollup-plugin-multi-input';
 
@@ -10,5 +12,15 @@ export default {
     format: 'esm',
   },
   external: [...Object.keys(dependencies), ...Object.keys(peerDependencies)],
-  plugins: [multiInput({ relative: 'src' }), typescript({ rootDir: './src' })],
+  plugins: [
+    multiInput({ relative: 'src' }),
+    nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
+    commonjs({
+      namedExports: {
+        'prop-types': ['elementType'],
+        'react-is': ['ForwardRef', 'Memo'],
+      },
+    }),
+    typescript({ rootDir: './src' }),
+  ],
 };

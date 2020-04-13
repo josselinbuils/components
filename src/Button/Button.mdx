@@ -3,9 +3,9 @@ name: Button
 menu: Components
 ---
 
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import { Playground, Props } from 'docz'
 import { Icon } from '../Icon'
-import { CheckCircleIcon } from '../icons/CheckCircleIcon'
 import { Button } from './Button'
 
 # Button
@@ -31,15 +31,38 @@ import { Button } from '@josselinbuils/components/Button';
 <Playground>
   <div>
     <Button variant="primary">Primary</Button>
-    <Button style={{ marginLeft: '1rem' }} variant="secondary">Secondary</Button>
+    <Button
+      style={{ marginLeft: '1rem' }}
+      variant="secondary"
+    >
+      Secondary
+    </Button>
     <Button style={{ marginLeft: '1rem' }} variant="ghost">Ghost</Button>
     <Button style={{ marginLeft: '1rem' }} variant="light">Light</Button>
   </div>
   <div style={{ marginTop: '1rem' }}>
     <Button disabled variant="primary">Primary</Button>
-    <Button disabled style={{ marginLeft: '1rem' }} variant="secondary">Secondary</Button>
-    <Button disabled style={{ marginLeft: '1rem' }} variant="ghost">Ghost</Button>
-    <Button disabled style={{ marginLeft: '1rem' }} variant="light">Light</Button>
+    <Button
+      disabled
+      style={{ marginLeft: '1rem' }}
+      variant="secondary"
+    >
+      Secondary
+    </Button>
+    <Button
+      disabled
+      style={{ marginLeft: '1rem' }}
+      variant="ghost"
+    >
+      Ghost
+    </Button>
+    <Button
+      disabled
+      style={{ marginLeft: '1rem' }}
+      variant="light"
+    >
+      Light
+    </Button>
   </div>
 </Playground>
 
@@ -60,12 +83,40 @@ import { Button } from '@josselinbuils/components/Button';
 ## With icon
 
 <Playground>
-  <Button icon={CheckCircleIcon} size="large">With icon</Button>
-  <Button icon={CheckCircleIcon} size="large" style={{ marginLeft: '1rem' }} />
-  <Button icon={CheckCircleIcon} size="medium" style={{ marginLeft: '1rem' }}>With icon</Button>
-  <Button icon={CheckCircleIcon} size="medium" style={{ marginLeft: '1rem' }} />
-  <Button icon={CheckCircleIcon} size="small" style={{ marginLeft: '1rem' }}>With icon</Button>
-  <Button icon={CheckCircleIcon} size="small" style={{ marginLeft: '1rem' }} />
-  <Button icon={CheckCircleIcon} size="extraSmall" style={{ marginLeft: '1rem' }}>With icon</Button>
-  <Button icon={CheckCircleIcon} size="extraSmall" style={{ marginLeft: '1rem' }} />
+  <Button icon={CheckCircleOutlineIcon} size="large">With icon</Button>
+  <Button
+    icon={CheckCircleOutlineIcon}
+    size="large"
+    style={{ marginLeft: '1rem' }}
+  />
+  <Button icon={CheckCircleOutlineIcon}
+    size="medium"
+    style={{ marginLeft: '1rem' }}
+  >
+    With icon
+  </Button>
+  <Button icon={CheckCircleOutlineIcon}
+    size="medium"
+    style={{ marginLeft: '1rem' }}
+   />
+  <Button icon={CheckCircleOutlineIcon}
+    size="small"
+    style={{ marginLeft: '1rem' }}
+  >
+    With icon
+  </Button>
+  <Button icon={CheckCircleOutlineIcon}
+    size="small"
+    style={{ marginLeft: '1rem' }}
+   />
+  <Button icon={CheckCircleOutlineIcon}
+    size="extraSmall"
+    style={{ marginLeft: '1rem' }}
+  >
+    With icon
+  </Button>
+  <Button icon={CheckCircleOutlineIcon}
+    size="extraSmall"
+    style={{ marginLeft: '1rem' }}
+   />
 </Playground>

@@ -41,12 +41,14 @@ export interface ThemeVariables {
   // Font
   fontFamily: string;
   fontWeight: number;
+  fontSizeXXL: string;
   fontSizeXL: string;
   fontSizeL: string;
   fontSize: string;
   fontSizeM: string;
   fontSizeS: string;
   fontSizeXS: string;
+  lineHeight: number;
 
   // Spaces
   doubleSpace: string;

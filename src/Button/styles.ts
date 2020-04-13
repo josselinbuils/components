@@ -10,6 +10,7 @@ const {
   borderRadius,
   borderWidth,
   fontSize,
+  fontSizeXXL,
   halfSpace,
   quarterSpace,
   space,
@@ -143,7 +144,7 @@ export const StyledButton = styled.button<{ size: string; variant: string }>`
 `;
 
 export const StyledIcon = styled(Icon)`
-  font-size: ${rem('21px')};
+  font-size: ${fontSizeXXL};
 
   &:not(:last-child) {
     margin-right: ${halfSpace};

@@ -1,24 +1,21 @@
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import ReportProblemOutlinedIcon from '@material-ui/icons/ReportProblemOutlined';
 import React, { FC, HTMLAttributes } from 'react';
-import { Icon } from '../Icon';
-import { AlertCircleIcon } from '../icons/AlertCircleIcon';
-import { AlertTriangleIcon } from '../icons/AlertTriangleIcon';
-import { CheckCircleIcon } from '../icons/CheckCircleIcon';
-import { InfoIcon } from '../icons/InfoIcon';
-import { AlertContainer, IconContainer, Message } from './styles';
+import { AlertContainer, Message, StyledIcon } from './styles';
 
 const icons = {
-  error: AlertCircleIcon,
-  info: InfoIcon,
-  success: CheckCircleIcon,
-  warning: AlertTriangleIcon,
+  error: ErrorOutlineIcon,
+  info: InfoOutlinedIcon,
+  success: CheckCircleOutlineIcon,
+  warning: ReportProblemOutlinedIcon,
 };
 
 export const Alert: FC<Props> = ({ children, level, ...forwardedProps }) => (
-  <AlertContainer level={level} {...forwardedProps}>
-    <IconContainer>
-      <Icon icon={icons[level] || icons.error} />
-    </IconContainer>
-    <Message role="alert">{children}</Message>
+  <AlertContainer level={level} role="alert" {...forwardedProps}>
+    <StyledIcon icon={icons[level]} />
+    <Message>{children}</Message>
   </AlertContainer>
 );
 

@@ -1,1 +1,0 @@
-export { AlertTriangleIcon } from './AlertTriangleIcon';

@@ -1,5 +1,5 @@
+import CheckIcon from '@material-ui/icons/Check';
 import React, { FC, InputHTMLAttributes } from 'react';
-import { CheckIcon } from '../icons/CheckIcon';
 import { CheckboxContainer, Input, StyledIcon } from './styles';
 
 export const Checkbox: FC<InputHTMLAttributes<HTMLInputElement>> = ({

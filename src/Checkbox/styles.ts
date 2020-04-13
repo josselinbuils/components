@@ -5,7 +5,7 @@ import { colors, mixins, variables } from '../themes';
 
 const { black, grey74, grey87, grey93, primary, white } = colors;
 const { component } = mixins;
-const { border, borderRadius, fontSizeL } = variables;
+const { border, borderRadius, fontSizeXL } = variables;
 
 const size = rem('24px');
 
@@ -29,12 +29,8 @@ export const StyledIcon = styled(Icon)`
   color: ${white};
   opacity: 0;
   transition: opacity 0.15s ease-in-out;
-  font-size: ${fontSizeL};
+  font-size: ${fontSizeXL};
   line-height: 1em;
-
-  svg {
-    stroke-width: 4px;
-  }
 `;
 
 export const CheckboxContainer = styled.div`

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Icon, SVGComponent } from '../../../src/Icon';
+import { Icon, MaterialIcon } from '../../../src/Icon';
 import { Card, CardProps } from '../Card';
 
 const StyledCard = styled(Card)`
@@ -34,6 +34,6 @@ export const IconCard: FC<Props> = ({ icon, title, ...forwardedProps }) => (
 );
 
 interface Props extends CardProps {
-  icon: SVGComponent;
+  icon: MaterialIcon;
   title: string;
 }

@@ -1,1 +1,0 @@
-export { AlertCircleIcon } from './AlertCircleIcon';

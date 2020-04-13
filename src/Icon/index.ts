@@ -1,2 +1,2 @@
 export { Icon } from './Icon';
-export * from './SVGComponent';
+export * from './MaterialIcon';

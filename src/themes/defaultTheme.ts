@@ -41,12 +41,14 @@ const variables = {
   // Font
   fontFamily: 'Open Sans, arial, sans-serif',
   fontWeight: 400,
+  fontSizeXXL: rem('22px'),
   fontSizeXL: rem('20px'),
   fontSizeL: rem('18px'),
   fontSize: rem('16px'),
   fontSizeM: rem('14px'),
   fontSizeS: rem('12px'),
   fontSizeXS: rem('10px'),
+  lineHeight: 1.5,
 
   // Spaces
   doubleSpace: rem('32px'),
@@ -60,7 +62,7 @@ const mixins = {
     font-family: ${variables.fontFamily};
     font-size: ${variables.fontSize};
     font-weight: ${variables.fontWeight};
-    line-height: 1.5;
+    line-height: ${variables.lineHeight};
   `,
 } as ThemeMixins;
 

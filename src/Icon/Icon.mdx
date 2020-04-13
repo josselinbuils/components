@@ -3,50 +3,27 @@ name: Icon
 menu: Components
 ---
 
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import { Playground, Props } from 'docz'
 import { FlexContainer, IconCard } from '../../docz/components'
-import { AlertCircleIcon } from '../icons/AlertCircleIcon'
-import { AlertTriangleIcon } from '../icons/AlertTriangleIcon'
-import { CheckIcon } from '../icons/CheckIcon'
-import { CheckCircleIcon } from '../icons/CheckCircleIcon'
-import { ContrastIcon } from '../icons/ContrastIcon'
-import { InfoIcon } from '../icons/InfoIcon'
-import { MoveIcon } from '../icons/MoveIcon'
-import { ScrollIcon } from '../icons/ScrollIcon'
-import { ZoomIcon } from '../icons/ZoomIcon'
 import { Icon } from './Icon'
 
 # Icon
 
+Makes material icons being sized by parent font size and being vertically
+aligned.
+
 ## Properties
 
-<Props of={Icon} />
+<Props isToggle of={Icon} />
 
 ## Usage
 
 ```js
 import { Icon } from '@josselinbuils/components/Icon';
-import { InfoIcon } from '@josselinbuils/components/icons/InfoIcon';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 ```
 
 <Playground>
-  <Icon icon={InfoIcon} />
+  <Icon icon={CheckCircleOutlineIcon} />
 </Playground>
-
-<br />
-
-## Icons
-
-Icons are based on [Feather](https://feathericons.com/).
-
-<FlexContainer offsetLeft={-25} offsetTop={-16}>
-  <IconCard icon={AlertCircleIcon} title="AlertCircleIcon" />
-  <IconCard icon={AlertTriangleIcon} title="AlertTriangleIcon" />
-  <IconCard icon={CheckIcon} title="CheckIcon" />
-  <IconCard icon={CheckCircleIcon} title="CheckCircleIcon" />
-  <IconCard icon={ContrastIcon} title="ContrastIcon" />
-  <IconCard icon={InfoIcon} title="InfoIcon" />
-  <IconCard icon={MoveIcon} title="MoveIcon" />
-  <IconCard icon={ScrollIcon} title="ScrollIcon" />
-  <IconCard icon={ZoomIcon} title="ZoomIcon" />
-</FlexContainer>
