@@ -1,6 +1,6 @@
 # Components
 
-Library of React components based on [ManoMano's toolkit](https://github.com/ManoManoTech/toolkit).
+Library of React components.
 
 ## Installation
 
